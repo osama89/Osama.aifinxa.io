@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw local files not needed by the app
+ruvector.db
+OsamaAlahmad_Resume.docx
+Pic.JPG
+WhatsApp Video 2026-05-10 at 18.50.35.mp4
