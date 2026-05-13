@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/sync-graph.mjs",
-    "prebuild": "node scripts/sync-graph.mjs",
+    "predev": "node scripts/sync-graph.mjs && node scripts/sync-design-tokens.mjs",
+    "prebuild": "node scripts/sync-graph.mjs && node scripts/sync-design-tokens.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "graph:sync": "graphify update . && node scripts/sync-graph.mjs"
+    "graph:sync": "graphify update . && node scripts/sync-graph.mjs",
+    "design:sync": "node scripts/sync-design-tokens.mjs",
+    "design": "node ./node_modules/@google/design.md/dist/index.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -26,6 +28,7 @@
     "three": "^0.184.0"
   },
   "devDependencies": {
+    "@google/design.md": "^0.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,11 +1,8 @@
 @import "tailwindcss";
-
-@theme inline {
-  --color-gold: #c9a96e;
-  --color-gold-light: #e8d5b0;
-  --color-dark: #0a0a0a;
-  --color-surface: #111111;
-}
+@import "./design-tokens.generated.css";
+/* DESIGN.md is the source of truth for colour / type / spacing tokens.
+   Run `npm run design:sync` to regenerate design-tokens.generated.css.
+   It supplies the @theme block (including legacy aliases gold / gold-light / dark / surface). */
 
 * {
   margin: 0;

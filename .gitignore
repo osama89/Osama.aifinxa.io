@@ -59,3 +59,11 @@ WhatsApp Video 2026-05-10 at 18.50.35.mp4
 *.canvas
 /_COMMUNITY_*.md
 /2026-*-*.md
+
+# DESIGN.md → token pipeline outputs. Source: DESIGN.md; generator: scripts/sync-design-tokens.mjs.
+# Regenerated on every predev/prebuild. Committing them invites drift.
+/app/design-tokens.generated.css
+/components/playground/scenes/design-tokens.generated.ts
+
+# Stray PAI memory junk — created when a shell didn't expand ${HOME}.
+${HOME}/

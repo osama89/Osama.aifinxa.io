@@ -28,6 +28,7 @@ import EarthScene from './playground/scenes/EarthScene';
 import DubaiScene, { Tower } from './playground/scenes/DubaiScene';
 import NebulaScene from './playground/scenes/NebulaScene';
 import GalaxyScene from './playground/scenes/GalaxyScene';
+import DesignShowcase from './playground/scenes/DesignShowcase';
 import Effects from './playground/lib/effects';
 import { Environment } from '@react-three/drei';
 import { playTone, freqForHeight } from './playground/lib/audio';
@@ -227,9 +228,10 @@ type DemoKey =
   | 'particles' | 'orb' | 'swarm' | 'wave' | 'nebula' | 'galaxy'
   | 'car' | 'truck' | 'sedan'
   | 'beach' | 'earth' | 'dubai'
-  | 'playcanvas';
+  | 'playcanvas'
+  | 'design';
 
-type GroupKey = 'gen' | 'cars' | 'world' | 'engines';
+type GroupKey = 'gen' | 'cars' | 'world' | 'engines' | 'showcase';
 
 interface Demo {
   key: DemoKey;
@@ -253,16 +255,18 @@ const DEMOS: Demo[] = [
   { key: 'earth',     label: 'EARTH',     hint: 'procedural planet shader · day/night terminator',         group: 'world',   bloom: 0.75 },
   { key: 'dubai',     label: 'DUBAI',     hint: 'click a tower · drag the time slider for day↔night',      group: 'world',   bloom: 0.4  },
   { key: 'playcanvas',label: 'PLAYCANVAS',hint: 'PlayCanvas ECS engine · click a cube to recolour',        group: 'engines', bloom: 0    },
+  { key: 'design',    label: 'DESIGN',    hint: 'DESIGN.md tokens · stitch-style preview · live mockup',  group: 'showcase',bloom: 0    },
 ];
 
 const GROUP_LABEL: Record<GroupKey, string> = {
-  gen:     'GENERATIVE',
-  cars:    'VEHICLES',
-  world:   'WORLD',
-  engines: 'ENGINES',
+  gen:      'GENERATIVE',
+  cars:     'VEHICLES',
+  world:    'WORLD',
+  engines:  'ENGINES',
+  showcase: 'SHOWCASE',
 };
 
-const GROUP_ORDER: GroupKey[] = ['gen', 'cars', 'world', 'engines'];
+const GROUP_ORDER: GroupKey[] = ['gen', 'cars', 'world', 'engines', 'showcase'];
 
 // ─── tiny in-Canvas Suspense fallback ──────────────────────────────────────
 
@@ -344,7 +348,7 @@ export default function PlaygroundCanvas() {
 
   const activeDemo = DEMOS.find((d) => d.key === demo)!;
   const grouped = useMemo(() => {
-    const g: Record<GroupKey, Demo[]> = { gen: [], cars: [], world: [], engines: [] };
+    const g: Record<GroupKey, Demo[]> = { gen: [], cars: [], world: [], engines: [], showcase: [] };
     for (const d of DEMOS) g[d.group].push(d);
     return g;
   }, []);
@@ -353,9 +357,12 @@ export default function PlaygroundCanvas() {
 
   return (
     <div className="relative w-full h-full">
-      {/* Engine swap: R3F Canvas hosts 11 scenes, PlayCanvas owns its own canvas */}
+      {/* Engine swap: R3F Canvas hosts 11 scenes, PlayCanvas owns its own canvas,
+          DesignShowcase is DOM-only. Two WebGL engines never coexist. */}
       {demo === 'playcanvas' ? (
         <PlayCanvasDemo />
+      ) : demo === 'design' ? (
+        <DesignShowcase />
       ) : (
         <Canvas
           shadows={{ type: THREE.PCFShadowMap }}
@@ -480,7 +487,7 @@ export default function PlaygroundCanvas() {
         className="absolute top-3 right-3 text-[9px] tracking-[0.3em] uppercase pointer-events-none"
         style={{ color: GOLD, fontFamily: 'var(--font-mono)' }}
       >
-        ◆ {demo === 'playcanvas' ? 'playcanvas · ecs' : 'r3f · bloom'}
+        ◆ {demo === 'playcanvas' ? 'playcanvas · ecs' : demo === 'design' ? 'design.md · stitch' : 'r3f · bloom'}
       </div>
 
       {/* ─── side control panel ──────────────────────────────────────────── */}

@@ -1,10 +1,11 @@
 'use client';
 
 /**
- * PlaygroundWindow — draggable Mac-style window hosting PlaygroundCanvas.
+ * PlaygroundWindow — draggable, resizable Mac-style window hosting PlaygroundCanvas.
  *
- * Two-mode chrome: docked (680px, draggable) ↔ fullscreen (covers viewport).
+ * Two-mode chrome: docked (resizable, draggable) ↔ fullscreen (covers viewport).
  *  - Green traffic light toggles fullscreen
+ *  - Bottom-right corner handle resizes the docked window (clamps to viewport)
  *  - Esc exits fullscreen, or closes the window if already docked
  *
  * On open, a GSAP timeline cascades the chrome (title bar fade →
@@ -23,12 +24,22 @@ interface PlaygroundWindowProps {
   onClose: () => void;
 }
 
+// Docked-mode size envelope. Defaults are generous enough that the SHOWCASE
+// → DESIGN mockup renders without scrolling on most laptops.
+const DEFAULT_W = 1000;
+const DEFAULT_H = 680;
+const MIN_W = 480;
+const MIN_H = 360;
+
 export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowProps) {
   const [minimized, setMinimized] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
+  const [size, setSize] = useState({ w: DEFAULT_W, h: DEFAULT_H });
+  const [resizing, setResizing] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Reset to docked state every time the window opens.
+  // Reset to docked state every time the window opens. Size is preserved
+  // across open/close so the user's choice sticks within the session.
   useEffect(() => {
     if (isOpen) { setFullscreen(false); setMinimized(false); }
   }, [isOpen]);
@@ -66,17 +77,58 @@ export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowPr
       .from('[data-pg-body]',     { opacity: 0, duration: 0.34, ease: 'power1.out' }, '-=0.22');
   }, { dependencies: [isOpen, reducedMotion], scope: containerRef });
 
-  // Position / size — fixed full-viewport when fullscreen, docked otherwise.
+  // Position / size — fixed full-viewport when fullscreen; pixel-controlled docked.
+  // Positioning (top-20) comes from the className; inline style only sets the
+  // size and cursor.
   const windowStyle = fullscreen
     ? { top: 0, left: 0, right: 0, bottom: 0, cursor: 'default' as const }
-    : { top: undefined, left: 'calc(50% + 40px)', right: undefined, bottom: undefined, cursor: 'grab' as const };
+    : {
+        left: 'calc(50% + 40px)',
+        cursor: resizing ? ('nwse-resize' as const) : ('grab' as const),
+        width: size.w,
+        maxWidth: '95vw',
+      };
+
+  // Resize drag state. We keep the active anchor in a ref so the global
+  // listeners (attached once per drag, removed on unmount or pointerup)
+  // always read the live values without re-binding.
+  const resizeAnchor = useRef<{ x: number; y: number; w: number; h: number } | null>(null);
+
+  useEffect(() => {
+    if (!resizing) return;
+    const onMove = (ev: PointerEvent) => {
+      const a = resizeAnchor.current;
+      if (!a) return;
+      const maxW = window.innerWidth  * 0.95;
+      const maxH = window.innerHeight * 0.9;
+      setSize({
+        w: Math.max(MIN_W, Math.min(maxW, a.w + (ev.clientX - a.x))),
+        h: Math.max(MIN_H, Math.min(maxH, a.h + (ev.clientY - a.y))),
+      });
+    };
+    const onUp = () => setResizing(false);
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup',   onUp);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup',   onUp);
+    };
+  }, [resizing]);
+
+  const onResizeStart = (e: React.PointerEvent) => {
+    if (fullscreen || minimized) return;
+    e.stopPropagation();
+    e.preventDefault();
+    resizeAnchor.current = { x: e.clientX, y: e.clientY, w: size.w, h: size.h };
+    setResizing(true);
+  };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           ref={containerRef}
-          drag={!fullscreen}
+          drag={!fullscreen && !resizing}
           dragMomentum={false}
           dragConstraints={{ top: -200, left: -700, right: 700, bottom: 500 }}
           initial={{ opacity: 0, scale: 0.92, x: 40, y: -8 }}
@@ -86,10 +138,10 @@ export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowPr
           className={
             fullscreen
               ? 'fixed inset-0 z-[998] w-full h-full'
-              : 'fixed top-28 z-[998] w-[680px] max-w-[90vw]'
+              : 'fixed top-20 z-[998]'
           }
           style={windowStyle}
-          whileDrag={fullscreen ? undefined : { cursor: 'grabbing' }}
+          whileDrag={fullscreen || resizing ? undefined : { cursor: 'grabbing' }}
         >
           <div
             className="border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col"
@@ -144,15 +196,18 @@ export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowPr
               </span>
             </div>
 
-            {/* Body — height animates between 0 (minimised), 460 (docked), and fill (fullscreen) */}
+            {/* Body — height animates between 0 (minimised), size.h (docked), and fill (fullscreen) */}
             <AnimatePresence initial={false}>
               {!minimized && (
                 <motion.div
                   data-pg-body
                   initial={{ height: 0 }}
-                  animate={{ height: fullscreen ? '100%' : 460 }}
+                  animate={{ height: fullscreen ? '100%' : size.h }}
                   exit={{ height: 0 }}
-                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  // Skip the height tween while the user is actively dragging
+                  // the corner — otherwise every pointer move queues a 280ms
+                  // animation and the resize visibly lags.
+                  transition={resizing ? { duration: 0 } : { duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                   className="relative overflow-hidden flex-1"
                   onMouseDown={(e) => e.stopPropagation()}
                 >
@@ -160,6 +215,36 @@ export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowPr
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {/* Corner resize handle — bottom-right. Pointer-driven; updates
+                `size` on every move. Hidden when fullscreen / minimised. */}
+            {!fullscreen && !minimized && (
+              <div
+                onPointerDown={onResizeStart}
+                onMouseDown={(e) => e.stopPropagation()}
+                data-hover="true"
+                role="separator"
+                aria-orientation="horizontal"
+                aria-label="Resize playground"
+                title="Drag to resize"
+                className="absolute right-0 bottom-0 w-5 h-5 flex items-end justify-end pr-1 pb-0.5 z-10"
+                style={{ cursor: 'nwse-resize', touchAction: 'none' }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    lineHeight: 1,
+                    color: 'var(--design-color-primary, #c9a96e)',
+                    opacity: resizing ? 1 : 0.55,
+                    transition: 'opacity 140ms',
+                  }}
+                >
+                  ◢
+                </span>
+              </div>
+            )}
           </div>
         </motion.div>
       )}
