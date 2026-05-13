@@ -95,6 +95,25 @@ const TYPE_COLOR: Record<string, string> = {
   data: '#7faad4', ops: '#d9a26f',  alert: '#e07060', time: '#64dfdf',
 };
 
+// ─── Main agent cognitive states (cycling) ────────────────────────────────
+
+interface MainCogState {
+  id: string;
+  label: string;
+  color: string;
+  glyph: 6 | 8 | 5 | 4; // number of vertices for the inner crystal
+}
+
+const MAIN_COG: MainCogState[] = [
+  { id: 'SCAN',     label: 'Observing environment',     color: '#64dfdf', glyph: 8 },
+  { id: 'PLAN',     label: 'Decomposing goals',         color: '#b8a4e8', glyph: 6 },
+  { id: 'DISPATCH', label: 'Delegating to agents',      color: '#c9a96e', glyph: 5 },
+  { id: 'SYNTH',    label: 'Synthesizing results',      color: '#7faad4', glyph: 4 },
+  { id: 'LEARN',    label: 'Reinforcing memory',        color: '#d4d4ff', glyph: 6 },
+];
+
+const MAIN_VERBS = ['DISPATCH', 'SYNC', 'DELEGATE', 'ROUTE', 'LEARN', 'PLAN', 'OBSERVE', 'DECIDE'];
+
 let pid = 0, lid = 0;
 
 // ─── COMPONENT ─────────────────────────────────────────────────────────────
@@ -114,13 +133,54 @@ export default function AgentNetwork() {
     edgeHeat: {} as Record<string, number>,
     dashOffset: 0, pulseT: 0,
     broadcastT: -1, frame: 0,
+    // Main agent extras
+    mouseCX: 0, mouseCY: 0,        // mouse in canvas coords (for iris tracking)
+    mainRot: 0,                     // continuous rotation of inner crystalline core
+    cogIdx: 0,                      // cycling cognitive state index
+    cogTimer: 0,                    // seconds within current cog state
+    autoBroadcastIn: 12,            // seconds until next auto-broadcast
+    signalsPerSec: 0,               // sliding throughput counter
+    signalsThisSec: 0,
+    secondTimer: 0,
+    scoutTimer: 0,
+    shockwaves: [] as { t: number }[],         // broadcast shockwave rings
+    nodeActivity: {} as Record<string, number>, // decay-tracked traffic per node
+    activePartnerId: null as string | null,    // dominant subordinate
   });
 
   const [selectedNode, setSelectedNode] = useState<AgentNode | null>(null);
   const [hovered, setHovered]           = useState<string | null>(null);
   const [log, setLog]                   = useState<LogEntry[]>([]);
+  // Main agent HUD console state
+  const [hud, setHud] = useState({
+    cogIdx: 0,
+    queue: 0,
+    throughput: 0,
+    broadcastIn: 12,
+    locked: false,
+    partnerLabel: null as string | null,
+  });
   const logRef  = useRef<LogEntry[]>([]);
   const animRef = useRef<number>(0);
+  const broadcastRef = useRef<() => void>(() => {});
+
+  // HUD sync: read stateRef into React state at 4Hz for the main agent console
+  useEffect(() => {
+    const id = setInterval(() => {
+      const s = stateRef.current;
+      setHud({
+        cogIdx: s.cogIdx,
+        queue: s.particles.length,
+        throughput: s.signalsPerSec,
+        broadcastIn: Math.max(0, Math.ceil(s.autoBroadcastIn)),
+        locked: s.selected === 'main',
+        partnerLabel: s.activePartnerId
+          ? (NODES.find(n => n.id === s.activePartnerId)?.label ?? null)
+          : null,
+      });
+    }, 250);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -204,14 +264,27 @@ export default function AgentNetwork() {
         trailWS: [], logged: false,
       });
       stateRef.current.edgeHeat[`${fromId}→${toId}`] = 1;
+      stateRef.current.signalsThisSec++;
+      // Track per-node traffic (excluding the main agent so the "partner" is a subordinate)
+      if (fromId !== 'main') stateRef.current.nodeActivity[fromId] = (stateRef.current.nodeActivity[fromId] || 0) + 1;
+      if (toId   !== 'main') stateRef.current.nodeActivity[toId]   = (stateRef.current.nodeActivity[toId]   || 0) + 1;
     }
 
     function broadcast() {
       stateRef.current.broadcastT = 0;
+      stateRef.current.autoBroadcastIn = 12;
+      stateRef.current.shockwaves.push({ t: 0 });
       NODES.forEach(n => {
         if (n.id !== 'main') setTimeout(() => spawn('main', n.id, 4), Math.random() * 800);
       });
       addLog('MAIN AGENT ⟶ BROADCAST ⟶ ALL AGENTS', '#c9a96e');
+    }
+    broadcastRef.current = broadcast;
+
+    function spawnScout() {
+      // Main agent sends a probing signal to a random subordinate
+      const target = NODES.filter(n => n.id !== 'main')[Math.floor(Math.random() * (NODES.length - 1))];
+      spawn('main', target.id, 2.5);
     }
 
     // Seed initial particles
@@ -268,6 +341,245 @@ export default function AgentNetwork() {
       ctx.setLineDash([]);
     }
 
+    // ── Main agent rich drawing ───────────────────────────────────
+    function drawMainAgent(sc: { x: number; y: number; z: number; sc: number }, r: number) {
+      const s = stateRef.current;
+      const cog = MAIN_COG[s.cogIdx];
+      const color = cog.color;
+
+      // 1) Outer dashed ring (slowly rotating)
+      ctx.save();
+      ctx.translate(sc.x, sc.y);
+      ctx.rotate(s.mainRot * 0.3);
+      ctx.beginPath();
+      ctx.arc(0, 0, r * 2.6, 0, Math.PI * 2);
+      ctx.setLineDash([5, 8]);
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = 0.28;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.setLineDash([]);
+      // Tick marks
+      for (let i = 0; i < 24; i++) {
+        const a = (i / 24) * Math.PI * 2;
+        const r1 = r * 2.55;
+        const r2 = r * 2.7;
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(a) * r1, Math.sin(a) * r1);
+        ctx.lineTo(Math.cos(a) * r2, Math.sin(a) * r2);
+        ctx.lineWidth = i % 6 === 0 ? 1.2 : 0.6;
+        ctx.globalAlpha = i % 6 === 0 ? 0.55 : 0.18;
+        ctx.strokeStyle = color;
+        ctx.stroke();
+      }
+      ctx.restore();
+      ctx.globalAlpha = 1;
+
+      // 2) Auto-broadcast countdown — a partial arc that fills as time runs out
+      const countdownP = 1 - Math.max(0, s.autoBroadcastIn) / 12;
+      ctx.save();
+      ctx.translate(sc.x, sc.y);
+      ctx.beginPath();
+      ctx.arc(0, 0, r * 2.0, -Math.PI / 2, -Math.PI / 2 + countdownP * Math.PI * 2);
+      ctx.strokeStyle = countdownP > 0.85 ? '#ffffff' : color;
+      ctx.lineWidth = 2;
+      ctx.globalAlpha = 0.7;
+      ctx.stroke();
+      ctx.restore();
+      ctx.globalAlpha = 1;
+
+      // 3) Inner concentric rings (rotating)
+      ctx.save();
+      ctx.translate(sc.x, sc.y);
+      [
+        { rr: r * 1.65, rot: s.mainRot * -0.5, alpha: 0.35, w: 1 },
+        { rr: r * 1.45, rot: s.mainRot * 0.7,  alpha: 0.5,  w: 0.8 },
+      ].forEach(({ rr, rot, alpha, w }) => {
+        ctx.save();
+        ctx.rotate(rot);
+        ctx.beginPath();
+        ctx.arc(0, 0, rr, 0, Math.PI * 1.5);
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = alpha;
+        ctx.lineWidth = w;
+        ctx.stroke();
+        ctx.restore();
+      });
+      ctx.restore();
+      ctx.globalAlpha = 1;
+
+      // 4) Rotating command text around the perimeter
+      ctx.save();
+      ctx.translate(sc.x, sc.y);
+      const textR = r * 2.15;
+      ctx.font = `600 ${Math.max(8, 8.5 * sc.sc)}px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.55;
+      const verbs = MAIN_VERBS;
+      const verbStep = (Math.PI * 2) / verbs.length;
+      for (let i = 0; i < verbs.length; i++) {
+        const a = i * verbStep + s.mainRot * 0.15;
+        ctx.save();
+        ctx.rotate(a + Math.PI / 2);
+        ctx.translate(0, -textR);
+        ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(verbs[i], 0, 0);
+        ctx.restore();
+      }
+      ctx.restore();
+      ctx.globalAlpha = 1;
+
+      // 5) Three orbiting status indicators
+      const indicators = [
+        { color: '#64dfdf', label: 'CPU', radius: r * 1.85, speed: 0.6,  phase: 0 },
+        { color: '#c9a96e', label: 'MEM', radius: r * 2.05, speed: -0.4, phase: 2 },
+        { color: '#ff7eb3', label: 'THR', radius: r * 1.7,  speed: 0.9,  phase: 4 },
+      ];
+      indicators.forEach((ind) => {
+        const a = s.mainRot * ind.speed + ind.phase;
+        const ix = sc.x + Math.cos(a) * ind.radius;
+        const iy = sc.y + Math.sin(a) * ind.radius;
+        // Trail
+        for (let t = 1; t <= 6; t++) {
+          const ta = a - ind.speed * 0.02 * t;
+          const tx = sc.x + Math.cos(ta) * ind.radius;
+          const ty = sc.y + Math.sin(ta) * ind.radius;
+          ctx.beginPath();
+          ctx.arc(tx, ty, 1.5 * (1 - t / 6), 0, Math.PI * 2);
+          ctx.fillStyle = ind.color;
+          ctx.globalAlpha = 0.3 * (1 - t / 6);
+          ctx.fill();
+        }
+        // Head
+        ctx.beginPath();
+        ctx.arc(ix, iy, 3, 0, Math.PI * 2);
+        ctx.fillStyle = ind.color;
+        ctx.globalAlpha = 1;
+        ctx.fill();
+        // Label
+        ctx.font = `500 7px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = ind.color;
+        ctx.globalAlpha = 0.85;
+        ctx.textAlign = 'center';
+        ctx.fillText(ind.label, ix, iy - 6);
+      });
+      ctx.globalAlpha = 1;
+
+      // 6) Main agent body — crystalline polygon (replaces flat circle)
+      const verts = cog.glyph * 2; // ring of n*2 vertices, alternating inner/outer for star
+      const innerR = r * 0.55;
+      const outerR = r;
+      ctx.save();
+      ctx.translate(sc.x, sc.y);
+      ctx.rotate(s.mainRot);
+      // Glow background
+      const bg = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 1.2);
+      bg.addColorStop(0, color + 'cc');
+      bg.addColorStop(1, 'transparent');
+      ctx.beginPath();
+      ctx.arc(0, 0, r * 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = bg;
+      ctx.fill();
+      // Star polygon body
+      ctx.beginPath();
+      for (let i = 0; i < verts; i++) {
+        const a = (i / verts) * Math.PI * 2 - Math.PI / 2;
+        const rad = i % 2 === 0 ? outerR : innerR;
+        const px = Math.cos(a) * rad;
+        const py = Math.sin(a) * rad;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      const fill = ctx.createRadialGradient(-r * 0.3, -r * 0.3, 0, 0, 0, r);
+      fill.addColorStop(0, color + 'ee');
+      fill.addColorStop(0.5, color + '88');
+      fill.addColorStop(1, color + '33');
+      ctx.fillStyle = fill;
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.globalAlpha = 0.9;
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+      // Inner counter-rotating glyph
+      ctx.rotate(-s.mainRot * 2);
+      ctx.beginPath();
+      for (let i = 0; i < verts; i++) {
+        const a = (i / verts) * Math.PI * 2 - Math.PI / 2;
+        const rad = i % 2 === 0 ? outerR * 0.45 : innerR * 0.45;
+        const px = Math.cos(a) * rad;
+        const py = Math.sin(a) * rad;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = '#000000';
+      ctx.globalAlpha = 0.45;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.restore();
+      ctx.globalAlpha = 1;
+
+      // 7) Mouse-tracking iris (a small pupil that looks toward the cursor)
+      const dx = s.mouseCX - sc.x;
+      const dy = s.mouseCY - sc.y;
+      const len = Math.max(1, Math.hypot(dx, dy));
+      const irisR = r * 0.18;
+      const irisX = sc.x + (dx / len) * irisR;
+      const irisY = sc.y + (dy / len) * irisR;
+      // White ring (cornea)
+      ctx.beginPath();
+      ctx.arc(sc.x, sc.y, r * 0.30, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.85)';
+      ctx.fill();
+      // Black pupil offset toward mouse
+      ctx.beginPath();
+      ctx.arc(irisX, irisY, r * 0.12, 0, Math.PI * 2);
+      ctx.fillStyle = '#000';
+      ctx.fill();
+      // Tiny cyan iris highlight
+      ctx.beginPath();
+      ctx.arc(irisX - r * 0.04, irisY - r * 0.04, r * 0.035, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+
+      // 8) State label below
+      ctx.font = `700 ${Math.max(8, 9 * sc.sc)}px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.95;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(cog.id, sc.x, sc.y + r + 14 * sc.sc);
+      ctx.font = `500 ${Math.max(7, 7 * sc.sc)}px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      ctx.fillText('MAIN AGENT', sc.x, sc.y + r + 14 * sc.sc + 11);
+      ctx.globalAlpha = 1;
+
+      // 9) LOCKED indicator — when user has selected the main agent, state cycle is paused
+      if (s.selected === 'main') {
+        ctx.save();
+        ctx.translate(sc.x, sc.y);
+        ctx.beginPath();
+        ctx.arc(0, 0, r * 2.9, 0, Math.PI * 2);
+        ctx.setLineDash([3, 5]);
+        ctx.lineDashOffset = s.dashOffset * 1.6;
+        ctx.strokeStyle = '#ff7eb3';
+        ctx.lineWidth = 1.2;
+        ctx.globalAlpha = 0.75;
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = `600 ${Math.max(7, 8 * sc.sc)}px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = '#ff7eb3';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('· LOCKED ·', 0, -r * 2.9 - 4);
+        ctx.restore();
+        ctx.globalAlpha = 1;
+      }
+    }
+
     function drawAxes() {
       const r = R() * 0.48;
       const o = proj(0, 0, 0);
@@ -293,6 +605,51 @@ export default function AgentNetwork() {
       ctx.clearRect(0, 0, W, H);
       s.dashOffset -= 0.38; s.pulseT += 0.018; s.frame++;
 
+      // ── Main agent timers (run ~60 fps so dt ≈ 1/60) ───────────────
+      const dt = 1 / 60;
+      s.mainRot += dt * 0.6;
+
+      // Pause the cycle while the user has selected the main agent — gives them time to study one state
+      if (s.selected !== 'main') {
+        s.cogTimer += dt;
+        if (s.cogTimer > 5.0) {
+          s.cogTimer = 0;
+          s.cogIdx = (s.cogIdx + 1) % MAIN_COG.length;
+        }
+      }
+
+      s.autoBroadcastIn -= dt;
+      if (s.autoBroadcastIn <= 0) {
+        broadcast();
+      }
+
+      // Decay per-node activity counts; compute the dominant subordinate ("active partner")
+      let bestId: string | null = null;
+      let bestScore = 0;
+      for (const id in s.nodeActivity) {
+        s.nodeActivity[id] = Math.max(0, s.nodeActivity[id] - dt * 0.6);
+        if (s.nodeActivity[id] > bestScore) {
+          bestScore = s.nodeActivity[id];
+          bestId = id;
+        }
+      }
+      s.activePartnerId = bestScore >= 2 ? bestId : null;
+
+      s.scoutTimer += dt;
+      if (s.scoutTimer > 1.2) {
+        s.scoutTimer = 0;
+        if (Math.random() < 0.7) spawnScout();
+      }
+
+      // Throughput counter (signals/sec via sliding 1-second window)
+      s.secondTimer += dt;
+      s.signalsThisSec += 0; // incremented at spawn time below
+      if (s.secondTimer >= 1) {
+        s.signalsPerSec = s.signalsThisSec;
+        s.signalsThisSec = 0;
+        s.secondTimer = 0;
+      }
+
       drawFloorGrid();
       drawTimePlatform();
       drawAxes();
@@ -309,6 +666,30 @@ export default function AgentNetwork() {
         }
         s.broadcastT += 0.01;
         if (s.broadcastT > 1) s.broadcastT = -1;
+      }
+
+      // Broadcast shockwaves — 3 concentric expanding rings per wave, white inner + gold outer
+      if (s.shockwaves.length > 0) {
+        const origin = proj(0, 0, 0);
+        const maxR = R() * 1.6 * s.zoom;
+        s.shockwaves = s.shockwaves.filter((sw) => {
+          sw.t += dt * 0.9;
+          if (sw.t >= 1) return false;
+          for (let ring = 0; ring < 3; ring++) {
+            const phase = Math.max(0, sw.t - ring * 0.08);
+            if (phase <= 0) continue;
+            const rad = phase * maxR;
+            const a = Math.max(0, (1 - phase)) * 0.55 * (1 - ring * 0.28);
+            ctx.beginPath();
+            ctx.arc(origin.x, origin.y, rad, 0, Math.PI * 2);
+            ctx.strokeStyle = ring === 0 ? '#ffffff' : '#c9a96e';
+            ctx.lineWidth = ring === 0 ? Math.max(0.5, 2.5 - phase * 2) : Math.max(0.4, 1.5 - phase);
+            ctx.globalAlpha = a;
+            ctx.stroke();
+          }
+          return true;
+        });
+        ctx.globalAlpha = 1;
       }
 
       // Edge heat decay
@@ -403,8 +784,35 @@ export default function AgentNetwork() {
         const isH = s.hovered === n.id, isSel = s.selected === n.id;
         const dA = Math.max(0.38, 1 - Math.max(0, sc.z) * 0.0009);
 
-        // MAIN: triple pulse rings
+        // MAIN: dedicated rich rendering — skip the default node body
         if (n.tier === 0) {
+          // Active partner beam — drawn BEFORE the agent body so the agent sits on top
+          if (s.activePartnerId) {
+            const partnerSc = cache.get(s.activePartnerId);
+            if (partnerSc) {
+              ctx.save();
+              ctx.beginPath();
+              ctx.moveTo(sc.x, sc.y);
+              ctx.lineTo(partnerSc.x, partnerSc.y);
+              ctx.strokeStyle = '#c9a96e';
+              ctx.lineWidth = 3 + Math.sin(s.pulseT * 4) * 0.6;
+              ctx.globalAlpha = 0.55;
+              ctx.shadowBlur = 14;
+              ctx.shadowColor = '#c9a96e';
+              ctx.stroke();
+              ctx.shadowBlur = 0;
+              // Small dot at the partner end
+              ctx.beginPath();
+              ctx.arc(partnerSc.x, partnerSc.y, 4 + Math.sin(s.pulseT * 5) * 0.8, 0, Math.PI * 2);
+              ctx.fillStyle = '#c9a96e';
+              ctx.globalAlpha = 0.9;
+              ctx.fill();
+              ctx.restore();
+              ctx.globalAlpha = 1;
+            }
+          }
+
+          // Triple pulse rings (kept — they look great)
           for (let ri = 0; ri < 3; ri++) {
             const pr = r + (Math.sin(s.pulseT + ri * 1.15) * 0.5 + 0.5) * r * (0.55 + ri * 0.38);
             ctx.beginPath(); ctx.arc(sc.x, sc.y, pr, 0, Math.PI * 2);
@@ -413,6 +821,8 @@ export default function AgentNetwork() {
             ctx.lineWidth = 1; ctx.stroke();
           }
           ctx.globalAlpha = 1;
+          drawMainAgent(sc, r);
+          continue; // skip default body, decoration, label
         }
 
         // CHRONOS: rotating dashed ring + clock hand
@@ -452,7 +862,7 @@ export default function AgentNetwork() {
         }
 
         // Hover / select glow
-        if ((isH || isSel) && n.tier !== 0) {
+        if (isH || isSel) {
           const glow = ctx.createRadialGradient(sc.x, sc.y, r * 0.5, sc.x, sc.y, r * 3.4);
           glow.addColorStop(0, color + '44'); glow.addColorStop(1, 'transparent');
           ctx.beginPath(); ctx.arc(sc.x, sc.y, r * 3.4, 0, Math.PI * 2);
@@ -461,7 +871,7 @@ export default function AgentNetwork() {
 
         // Node body gradient
         const bg = ctx.createRadialGradient(sc.x - r * 0.28, sc.y - r * 0.28, 0, sc.x, sc.y, r);
-        bg.addColorStop(0, color + (n.tier === 0 ? 'ee' : 'bb'));
+        bg.addColorStop(0, color + 'bb');
         bg.addColorStop(1, color + '33');
         ctx.globalAlpha = dA;
         ctx.beginPath(); ctx.arc(sc.x, sc.y, r, 0, Math.PI * 2);
@@ -470,22 +880,8 @@ export default function AgentNetwork() {
         // Border
         ctx.beginPath(); ctx.arc(sc.x, sc.y, r, 0, Math.PI * 2);
         ctx.strokeStyle = isSel ? '#ffffff' : color;
-        ctx.lineWidth = isSel ? 2.5 : n.tier === 0 ? 1.5 : 1;
+        ctx.lineWidth = isSel ? 2.5 : 1;
         ctx.globalAlpha = (isSel ? 1 : 0.65) * dA; ctx.stroke(); ctx.globalAlpha = 1;
-
-        // MAIN inner decoration
-        if (n.tier === 0) {
-          ctx.save();
-          ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.lineWidth = 1.5 * sc.sc;
-          ctx.beginPath();
-          ctx.moveTo(sc.x - r*0.38, sc.y); ctx.lineTo(sc.x + r*0.38, sc.y);
-          ctx.moveTo(sc.x, sc.y - r*0.38); ctx.lineTo(sc.x, sc.y + r*0.38);
-          ctx.stroke();
-          ctx.font = `bold ${r * 0.42}px 'JetBrains Mono', monospace`;
-          ctx.fillStyle = 'rgba(0,0,0,0.65)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-          ctx.fillText('AI', sc.x, sc.y);
-          ctx.restore();
-        }
 
         // Core center dot
         if (n.tier === 1) {
@@ -542,6 +938,9 @@ export default function AgentNetwork() {
     function onMouseMove(e: MouseEvent) {
       const s = stateRef.current;
       const rect = canvas!.getBoundingClientRect();
+      // Always track cursor in canvas coords for the main agent's iris
+      s.mouseCX = e.clientX - rect.left;
+      s.mouseCY = e.clientY - rect.top;
       if (s.dragging) {
         s.rotY = s.rotStartY + (e.clientX - s.dragSX) * 0.007;
         s.rotX = Math.max(0.05, Math.min(1.5, s.rotStartX + (e.clientY - s.dragSY) * 0.007));
@@ -619,6 +1018,101 @@ export default function AgentNetwork() {
   return (
     <div className="relative w-full h-full" style={{ cursor: 'grab' }}>
       <canvas ref={canvasRef} className="w-full h-full block" style={{ touchAction: 'none' }} />
+
+      {/* MAIN AGENT command console (top-center) */}
+      <div
+        className="absolute top-4 left-1/2 -translate-x-1/2 pointer-events-auto"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        <div
+          className="border border-[#c9a96e]/30 px-4 py-2.5 flex items-center gap-5"
+          style={{
+            background: 'rgba(7,7,11,0.78)',
+            backdropFilter: 'blur(18px)',
+            boxShadow: '0 0 24px rgba(201,169,110,0.14)',
+            minWidth: 360,
+          }}
+        >
+          {/* State */}
+          <div className="flex items-center gap-2">
+            <div
+              className="w-1.5 h-1.5 rounded-full"
+              style={{
+                background: MAIN_COG[hud.cogIdx].color,
+                boxShadow: `0 0 8px ${MAIN_COG[hud.cogIdx].color}`,
+              }}
+            />
+            <div>
+              <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">
+                State{hud.locked && <span className="text-[#ff7eb3] ml-2">· LOCKED</span>}
+              </p>
+              <p
+                className="text-[10px] font-bold tracking-[0.18em] transition-colors duration-700"
+                style={{ color: MAIN_COG[hud.cogIdx].color }}
+              >
+                {MAIN_COG[hud.cogIdx].id}
+              </p>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-px h-7 bg-white/8" />
+
+          {/* Partner */}
+          <div>
+            <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">Partner</p>
+            <p className="text-[#c9a96e] text-[10px] font-bold truncate max-w-[100px]">
+              {hud.partnerLabel ?? '—'}
+            </p>
+          </div>
+
+          {/* Queue */}
+          <div>
+            <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">Queue</p>
+            <p className="text-[#64dfdf] text-[10px] font-bold tabular-nums">
+              {hud.queue.toString().padStart(2, '0')}
+            </p>
+          </div>
+
+          {/* Throughput */}
+          <div>
+            <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">Sig/s</p>
+            <p className="text-[#ff7eb3] text-[10px] font-bold tabular-nums">
+              {hud.throughput.toString().padStart(2, '0')}
+            </p>
+          </div>
+
+          {/* Next broadcast countdown */}
+          <div>
+            <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">Next</p>
+            <p
+              className="text-[10px] font-bold tabular-nums transition-colors"
+              style={{
+                color: hud.broadcastIn <= 3 ? '#ffffff' : '#c9a96e',
+                textShadow: hud.broadcastIn <= 3 ? '0 0 8px #ffffff' : 'none',
+              }}
+            >
+              {hud.broadcastIn}s
+            </p>
+          </div>
+
+          {/* Broadcast now button */}
+          <button
+            onClick={() => broadcastRef.current()}
+            className="ml-1 border border-[#c9a96e]/50 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-black transition-colors duration-200 px-2.5 py-1 text-[8px] tracking-[0.25em]"
+            data-hover="true"
+          >
+            BROADCAST
+          </button>
+        </div>
+        {/* Sub-label */}
+        <p
+          className="text-white/30 text-[7px] tracking-[0.4em] uppercase text-center mt-1.5 transition-colors duration-700"
+          style={{ color: MAIN_COG[hud.cogIdx].color + '99' }}
+        >
+          {MAIN_COG[hud.cogIdx].label}
+        </p>
+      </div>
 
       {/* Node info panel */}
       <div

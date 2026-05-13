@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Nav from '@/components/Nav';
 import Loader from '@/components/Loader';
 import Hero from '@/components/Hero';
@@ -10,6 +11,9 @@ import HorizontalScroll from '@/components/HorizontalScroll';
 import Contact from '@/components/Contact';
 import Terminal from '@/components/Terminal';
 import PlaygroundWindow from '@/components/PlaygroundWindow';
+
+const NeuralBrain = dynamic(() => import('@/components/NeuralBrain'), { ssr: false });
+const ObsidianGraph = dynamic(() => import('@/components/ObsidianGraph'), { ssr: false });
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -63,6 +67,8 @@ export default function Home() {
         />
         <Hero />
         <About />
+        <NeuralBrain />
+        <ObsidianGraph />
         <Marquee />
         <HorizontalScroll />
         <Contact />

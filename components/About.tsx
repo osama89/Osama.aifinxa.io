@@ -1,8 +1,11 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+
+const PhotoIntelligence = dynamic(() => import('./PhotoIntelligence'), { ssr: false });
 
 const EXPERIENCE = [
   { role: 'Product Manager – AI-Native Platform Owner', company: 'Olive Green Holding', period: '2026 – Present' },
@@ -35,6 +38,7 @@ export default function About() {
   const textRef       = useRef<HTMLDivElement>(null);
   const photoRef      = useRef<HTMLDivElement>(null);
   const photoWrapRef  = useRef<HTMLDivElement>(null);
+  const [focusOpen, setFocusOpen] = useState(false);
 
   const isInView      = useInView(textRef,      { once: true, margin: '-100px' });
   const isPhotoInView = useInView(photoWrapRef, { once: true, margin: '-80px' });
@@ -99,7 +103,13 @@ export default function About() {
           {/* tilt target — overflow clipping boundary */}
           <div
             ref={photoRef}
-            className="relative overflow-hidden aspect-[3/4]"
+            onClick={() => setFocusOpen(true)}
+            role="button"
+            tabIndex={0}
+            aria-label="Enter intelligence mode"
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setFocusOpen(true); }}
+            data-hover="true"
+            className="relative overflow-hidden aspect-[3/4] cursor-pointer group"
             style={{ willChange: 'transform' }}
           >
             <Image
@@ -169,6 +179,26 @@ export default function About() {
                 }}
               />
             ))}
+
+            {/* z-35: Hover prompt — fades in on hover to invite the click */}
+            <div
+              className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                zIndex: 35,
+                background: 'radial-gradient(ellipse at center, rgba(201,169,110,0.18) 0%, transparent 65%)',
+              }}
+            >
+              <div className="text-center" style={{ fontFamily: 'var(--font-mono)' }}>
+                <div className="w-12 h-12 mx-auto mb-3 border border-[#c9a96e]/70 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M3 12a9 9 0 0118 0M3 12a9 9 0 0018 0" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <p className="text-[#c9a96e] text-[9px] tracking-[0.5em] uppercase">Click · Explore</p>
+                <p className="text-white/50 text-[8px] tracking-[0.4em] uppercase mt-1">Intelligence Mode</p>
+              </div>
+            </div>
 
             {/* z-40: Corner frames */}
             <div className="absolute inset-0 border border-[#c9a96e]/20 pointer-events-none" style={{ zIndex: 40 }} />
@@ -284,6 +314,8 @@ export default function About() {
           </svg>
         </motion.a>
       </div>
+
+      <PhotoIntelligence isOpen={focusOpen} onClose={() => setFocusOpen(false)} />
     </section>
   );
 }

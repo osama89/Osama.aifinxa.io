@@ -1,0 +1,258 @@
+{
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\eslint.config.mjs": {
+    "mtime": 1778601754.4379568,
+    "hash": "6c4307ffa009658f5c97f5629094c0c2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\next-env.d.ts": {
+    "mtime": 1778601987.904431,
+    "hash": "29f60a376e12bf72b67d4994fcc84214"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\next.config.ts": {
+    "mtime": 1778601754.4379568,
+    "hash": "025f4fcb6024b3524d19492cf7ce54a2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\postcss.config.mjs": {
+    "mtime": 1778601754.4551373,
+    "hash": "481fac0fdecd70e1821cc30b86030c1a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\app\\layout.tsx": {
+    "mtime": 1778601754.4167757,
+    "hash": "4add0550fc5c96330c183250701636fb"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\app\\page.tsx": {
+    "mtime": 1778602203.096297,
+    "hash": "1b1fb15015efb182dcc9a414a3b5b094"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\About.tsx": {
+    "mtime": 1778604060.985507,
+    "hash": "0ca9cc143d8747c4ae723c14236fbdf4"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\AgentNetwork.tsx": {
+    "mtime": 1778609429.5837872,
+    "hash": "cc9a04c078236de0c3cb03222fdbf912"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Contact.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "d635e29d8c02d6641f7d1880d48c2e92"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\CustomCursor.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "c3d14c8697ed4657dbb577191ae2bee1"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Gallery.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "cb85e74067773b5f9bb5311c265db2cb"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Hero.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "25733ca16e0a687893b6a2a7a8d8601a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\HorizontalScroll.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "688080398635d6bfb21c15179ceed706"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Loader.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "d0f24e05d580dc101de3334c1e0f8d2a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Marquee.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "07fc5c98b2299abc382a38ea69346835"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Nav.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "f57412da15246660a58914916b117b29"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\NeuralBrain.tsx": {
+    "mtime": 1778606624.0928862,
+    "hash": "dd870bd29a27b2824bc8074df829b534"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\PhotoIntelligence.tsx": {
+    "mtime": 1778606261.6294484,
+    "hash": "09702ab7f8a3cb317be4e1efe42f5be2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\PlaygroundWindow.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "9a017c4e3a18eb9f0a8587fdf74d2cf6"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Skills.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "2ab3e1f7ebf2e7fe10582a4301b2fc3f"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Terminal.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "26e26f915c6886c695293ddce017be4b"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\ThreeScene.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "8dbdce32a404928df2833983a5a2e385"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\eslint.config.mjs": {
+    "mtime": 1778601754.4379568,
+    "hash": "6c4307ffa009658f5c97f5629094c0c2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\next-env.d.ts": {
+    "mtime": 1778601987.904431,
+    "hash": "29f60a376e12bf72b67d4994fcc84214"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\next.config.ts": {
+    "mtime": 1778601754.4379568,
+    "hash": "025f4fcb6024b3524d19492cf7ce54a2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\postcss.config.mjs": {
+    "mtime": 1778601754.4551373,
+    "hash": "481fac0fdecd70e1821cc30b86030c1a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\app\\layout.tsx": {
+    "mtime": 1778601754.4167757,
+    "hash": "4add0550fc5c96330c183250701636fb"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\app\\page.tsx": {
+    "mtime": 1778602203.096297,
+    "hash": "1b1fb15015efb182dcc9a414a3b5b094"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\About.tsx": {
+    "mtime": 1778604060.985507,
+    "hash": "0ca9cc143d8747c4ae723c14236fbdf4"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\AgentNetwork.tsx": {
+    "mtime": 1778609429.5837872,
+    "hash": "cc9a04c078236de0c3cb03222fdbf912"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Contact.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "d635e29d8c02d6641f7d1880d48c2e92"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\CustomCursor.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "c3d14c8697ed4657dbb577191ae2bee1"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Gallery.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "cb85e74067773b5f9bb5311c265db2cb"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Hero.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "25733ca16e0a687893b6a2a7a8d8601a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\HorizontalScroll.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "688080398635d6bfb21c15179ceed706"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Loader.tsx": {
+    "mtime": 1778601754.4230688,
+    "hash": "d0f24e05d580dc101de3334c1e0f8d2a"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Marquee.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "07fc5c98b2299abc382a38ea69346835"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Nav.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "f57412da15246660a58914916b117b29"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\NeuralBrain.tsx": {
+    "mtime": 1778606624.0928862,
+    "hash": "dd870bd29a27b2824bc8074df829b534"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\PhotoIntelligence.tsx": {
+    "mtime": 1778606261.6294484,
+    "hash": "09702ab7f8a3cb317be4e1efe42f5be2"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\PlaygroundWindow.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "9a017c4e3a18eb9f0a8587fdf74d2cf6"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Skills.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "2ab3e1f7ebf2e7fe10582a4301b2fc3f"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Terminal.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "26e26f915c6886c695293ddce017be4b"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\ThreeScene.tsx": {
+    "mtime": 1778601754.4379568,
+    "hash": "8dbdce32a404928df2833983a5a2e385"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\AGENTS.md": {
+    "mtime": 1778610687.6808805,
+    "hash": "5a55db3127d5caafc51d48f68a280669"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\CLAUDE.md": {
+    "mtime": 1778608715.3079288,
+    "hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\README.md": {
+    "mtime": 1778601754.4167757,
+    "hash": "9162add00befbcdb432430f405c4ad8d"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\AGENTS.md": {
+    "mtime": 1778608713.4785967,
+    "hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\CLAUDE.md": {
+    "mtime": 1778608715.3079288,
+    "hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\README.md": {
+    "mtime": 1778601754.4167757,
+    "hash": "9162add00befbcdb432430f405c4ad8d"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\file.svg": {
+    "mtime": 1778601754.457154,
+    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\globe.svg": {
+    "mtime": 1778601754.4584074,
+    "hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\next.svg": {
+    "mtime": 1778601754.4697118,
+    "hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\vercel.svg": {
+    "mtime": 1778601754.4697118,
+    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\window.svg": {
+    "mtime": 1778601754.5017176,
+    "hash": "a2760511c65806022ad20adf74370ff3"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\images\\photo.jpg": {
+    "mtime": 1778601754.4697118,
+    "hash": "4d0ef2735c33ddbe491ec50bd480e9e1"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\file.svg": {
+    "mtime": 1778601754.457154,
+    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\globe.svg": {
+    "mtime": 1778601754.4584074,
+    "hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\next.svg": {
+    "mtime": 1778601754.4697118,
+    "hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\vercel.svg": {
+    "mtime": 1778601754.4697118,
+    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\window.svg": {
+    "mtime": 1778601754.5017176,
+    "hash": "a2760511c65806022ad20adf74370ff3"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\images\\photo.jpg": {
+    "mtime": 1778601754.4697118,
+    "hash": "4d0ef2735c33ddbe491ec50bd480e9e1"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\videos\\hero.mp4": {
+    "mtime": 1778601754.5001588,
+    "hash": "69342d1a43174b7278fcf980e47e6934"
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\videos\\hero.mp4": {
+    "mtime": 1778601754.5001588,
+    "hash": "69342d1a43174b7278fcf980e47e6934"
+  }
+}

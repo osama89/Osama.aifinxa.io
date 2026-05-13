@@ -45,3 +45,17 @@ ruvector.db
 OsamaAlahmad_Resume.docx
 Pic.JPG
 WhatsApp Video 2026-05-10 at 18.50.35.mp4
+
+# Claude Code project hooks contain absolute Windows paths — local-only.
+# Keep .claude/skills/ committed so the project-local skill files travel.
+.claude/settings.json
+.claude/settings.local.json
+
+# Personal drop-off folder + on-disk pre-change snapshots — local-only.
+/files/
+/Deploy/
+
+# Obsidian scratch / stray graphify output — the canonical wiki lives in notes/
+*.canvas
+/_COMMUNITY_*.md
+/2026-*-*.md

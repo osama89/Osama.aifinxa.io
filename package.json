@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-graph.mjs",
+    "prebuild": "node scripts/sync-graph.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "graph:sync": "graphify update . && node scripts/sync-graph.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
     "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
     "next": "16.2.6",
+    "playcanvas": "^2.18.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-parallax-tilt": "^1.7.327",
