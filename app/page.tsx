@@ -8,6 +8,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Marquee from '@/components/Marquee';
 import HorizontalScroll from '@/components/HorizontalScroll';
+import RegionalReach from '@/components/RegionalReach';
 import Contact from '@/components/Contact';
 import Terminal from '@/components/Terminal';
 import PlaygroundWindow from '@/components/PlaygroundWindow';
@@ -71,6 +72,7 @@ export default function Home() {
         <ObsidianGraph />
         <Marquee />
         <HorizontalScroll />
+        <RegionalReach />
         <Contact />
         <footer className="py-10 text-center border-t border-white/5">
           <p

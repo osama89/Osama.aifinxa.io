@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { MotionLayerScroller } from './effects/MotionLayerScroller';
+import { LiveLocation } from './effects/LiveLocation';
+import { LiveWatch } from './effects/LiveWatch';
 
 const AgentNetwork = dynamic(() => import('./AgentNetwork'), { ssr: false });
 
@@ -68,6 +71,15 @@ export default function Hero() {
       ref={containerRef}
       className="relative h-screen overflow-hidden flex items-center"
     >
+      {/* Animated blueprint background FX — parallax grid layers + radial glow */}
+      <div className="absolute inset-0 -z-10">
+        <MotionLayerScroller />
+      </div>
+      <div className="bg-radial-fade absolute inset-0 -z-10" aria-hidden />
+
+      {/* Floating defect pins drifting in the background */}
+      <FloatingPins />
+
       {/* Left half: text content */}
       <motion.div
         className="relative z-10 w-full md:w-1/2 px-8 md:px-16 lg:px-24"
@@ -186,6 +198,16 @@ export default function Hero() {
         <AgentNetwork />
       </motion.div>
 
+      {/* Live tags — floating corner: location + Dubai clock */}
+      <div className="pointer-events-none absolute right-6 top-24 z-20 hidden flex-col items-end gap-2 lg:flex">
+        <div className="pointer-events-auto">
+          <LiveLocation />
+        </div>
+        <div className="pointer-events-auto">
+          <LiveWatch />
+        </div>
+      </div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -200,5 +222,42 @@ export default function Hero() {
       <div className="absolute top-8 left-8 w-10 h-10 border-l border-t border-[#1ba3b8]/30 pointer-events-none" />
       <div className="absolute bottom-8 left-8 w-10 h-10 border-l border-b border-[#1ba3b8]/30 pointer-events-none" />
     </section>
+  );
+}
+
+/* Decorative floating pin marks drifting in the hero background */
+function FloatingPins() {
+  const pins = [
+    { top: '18%', left: '8%', delay: 0, size: 14 },
+    { top: '30%', left: '46%', delay: 0.4, size: 10 },
+    { top: '62%', left: '12%', delay: 0.8, size: 12 },
+    { top: '74%', left: '40%', delay: 1.2, size: 16 },
+    { top: '45%', left: '30%', delay: 1.6, size: 8 },
+    { top: '12%', left: '38%', delay: 2.0, size: 10 },
+  ];
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10 hidden lg:block" aria-hidden>
+      {pins.map((p, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, scale: 0.4 }}
+          animate={{ opacity: [0, 0.9, 0.9, 0], scale: [0.4, 1, 1, 0.8] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            delay: p.delay,
+            ease: 'easeInOut',
+          }}
+          style={{ top: p.top, left: p.left, width: p.size, height: p.size }}
+          className="absolute"
+        >
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 rounded-full bg-[var(--color-accent-glow)] opacity-30 blur-md" />
+            <div className="absolute inset-0 rounded-full border border-[var(--color-accent-glow)]/70 bg-[var(--color-accent)]/40" />
+            <div className="absolute inset-[35%] rounded-full bg-[var(--color-accent-glow)]" />
+          </div>
+        </motion.div>
+      ))}
+    </div>
   );
 }

@@ -51,6 +51,24 @@ body {
   color: #e5e9f0;
 }
 
+/* SnagIT-compatible color vars — consumed by ported effects (globe, clock,
+   location tag, portrait, parallax background). Same Blueprint Steel palette
+   as the DESIGN.md tokens, exposed under the names those components expect. */
+:root {
+  --color-bg: #0a0e14;
+  --color-surface: #101820;
+  --color-steel: #1e2a38;
+  --color-steel-2: #243244;
+  --color-line: #2a3a4e;
+  --color-accent: #138294;
+  --color-accent-2: #1ba3b8;
+  --color-accent-glow: #22d3ee;
+  --color-amber: #c9960e;
+  --color-ink: #e5e9f0;
+  --color-muted: #7a8899;
+  --color-muted-2: #4f6072;
+}
+
 /* ── Blueprint ground — faint engineering grid ───────────────────────── */
 .bg-blueprint {
   background-image:
