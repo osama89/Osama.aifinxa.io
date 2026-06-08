@@ -6,12 +6,15 @@ import Nav from '@/components/Nav';
 import Loader from '@/components/Loader';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import AgentConsole from '@/components/AgentConsole';
+import BICommandCenter from '@/components/BICommandCenter';
 import Marquee from '@/components/Marquee';
 import HorizontalScroll from '@/components/HorizontalScroll';
 import RegionalReach from '@/components/RegionalReach';
 import Contact from '@/components/Contact';
 import Terminal from '@/components/Terminal';
 import PlaygroundWindow from '@/components/PlaygroundWindow';
+import SensoryFX from '@/components/SensoryFX';
 
 const NeuralBrain = dynamic(() => import('@/components/NeuralBrain'), { ssr: false });
 const ObsidianGraph = dynamic(() => import('@/components/ObsidianGraph'), { ssr: false });
@@ -53,6 +56,8 @@ export default function Home() {
         onClose={() => setPlaygroundOpen(false)}
       />
 
+      <SensoryFX />
+
       <main
         style={{
           opacity: loaded ? 1 : 0,
@@ -68,9 +73,11 @@ export default function Home() {
         />
         <Hero />
         <About />
+        <AgentConsole />
         <NeuralBrain />
         <ObsidianGraph />
         <RegionalReach />
+        <BICommandCenter />
         <Marquee />
         <HorizontalScroll />
         <Contact />
