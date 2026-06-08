@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { GlyphRain } from './effects/GlyphRain';
 
 const PhotoIntelligence = dynamic(() => import('./PhotoIntelligence'), { ssr: false });
 
@@ -78,8 +79,16 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start"
+      className="relative isolate py-24 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start"
     >
+
+      {/* Dynamic glyph-rain backdrop behind the text column (ported from SnagIT) */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-1/2 opacity-50 md:block"
+        aria-hidden
+      >
+        <GlyphRain className="h-full w-full" />
+      </div>
 
       {/* ── Photo column ─────────────────────────────────────── */}
       <motion.div

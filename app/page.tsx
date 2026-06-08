@@ -70,9 +70,9 @@ export default function Home() {
         <About />
         <NeuralBrain />
         <ObsidianGraph />
+        <RegionalReach />
         <Marquee />
         <HorizontalScroll />
-        <RegionalReach />
         <Contact />
         <footer className="py-10 text-center border-t border-white/5">
           <p
