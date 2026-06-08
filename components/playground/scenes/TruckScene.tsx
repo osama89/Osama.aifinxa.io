@@ -20,7 +20,7 @@ export default function TruckScene({ mouse, paintColor = '#2a3140' }: { mouse: {
   }), [paintColor]);
 
   const glass = useMemo(() => new THREE.MeshPhysicalMaterial({
-    color: '#0a0a0a', metalness: 0.2, roughness: 0.05,
+    color: '#0a0e14', metalness: 0.2, roughness: 0.05,
     transmission: 0.5, transparent: true, opacity: 0.6,
   }), []);
 

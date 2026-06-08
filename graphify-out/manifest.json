@@ -1,258 +1,957 @@
 {
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\eslint.config.mjs": {
     "mtime": 1778601754.4379568,
-    "hash": "6c4307ffa009658f5c97f5629094c0c2"
+    "ast_hash": "6c4307ffa009658f5c97f5629094c0c2",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\next-env.d.ts": {
     "mtime": 1778601987.904431,
-    "hash": "29f60a376e12bf72b67d4994fcc84214"
+    "ast_hash": "29f60a376e12bf72b67d4994fcc84214",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\next.config.ts": {
     "mtime": 1778601754.4379568,
-    "hash": "025f4fcb6024b3524d19492cf7ce54a2"
+    "ast_hash": "025f4fcb6024b3524d19492cf7ce54a2",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\postcss.config.mjs": {
     "mtime": 1778601754.4551373,
-    "hash": "481fac0fdecd70e1821cc30b86030c1a"
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\app\\layout.tsx": {
-    "mtime": 1778601754.4167757,
-    "hash": "4add0550fc5c96330c183250701636fb"
+    "mtime": 1780902237.6687305,
+    "ast_hash": "053613313e7038373e8c2aa3cf5654ae",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\app\\page.tsx": {
-    "mtime": 1778602203.096297,
-    "hash": "1b1fb15015efb182dcc9a414a3b5b094"
+    "mtime": 1778611948.2870364,
+    "ast_hash": "eb991befe29650f6f45ed6d93af52e8d",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\About.tsx": {
-    "mtime": 1778604060.985507,
-    "hash": "0ca9cc143d8747c4ae723c14236fbdf4"
+    "mtime": 1780901840.7446754,
+    "ast_hash": "376d942cbe6e884e5fb2726c0abd8140",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\AgentNetwork.tsx": {
-    "mtime": 1778609429.5837872,
-    "hash": "cc9a04c078236de0c3cb03222fdbf912"
+    "mtime": 1780901840.7466745,
+    "ast_hash": "ea6653ef6c93202e72a6f0f1c27ae748",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Contact.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "d635e29d8c02d6641f7d1880d48c2e92"
+    "mtime": 1780901840.7506735,
+    "ast_hash": "8ccbd10b3bccbf1290e8908c6c4e08a3",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\CustomCursor.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "c3d14c8697ed4657dbb577191ae2bee1"
+    "mtime": 1780901840.752676,
+    "ast_hash": "2a1a6f8f390db5dc5e2dd1a695a9b650",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Gallery.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "cb85e74067773b5f9bb5311c265db2cb"
+    "mtime": 1780901840.7545128,
+    "ast_hash": "fe94c7e76da0d52a94e90f0095cc5c31",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Hero.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "25733ca16e0a687893b6a2a7a8d8601a"
+    "mtime": 1780901840.7545128,
+    "ast_hash": "43a1eabb25a7b46e91df2710a6587519",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\HorizontalScroll.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "688080398635d6bfb21c15179ceed706"
+    "mtime": 1780901840.7584455,
+    "ast_hash": "c389225e7190fa047537859085ee2ea1",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Loader.tsx": {
-    "mtime": 1778601754.4230688,
-    "hash": "d0f24e05d580dc101de3334c1e0f8d2a"
+    "mtime": 1780901840.760408,
+    "ast_hash": "298b1a9ae66b75eef54b0900d368555f",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Marquee.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "07fc5c98b2299abc382a38ea69346835"
+    "mtime": 1780901840.7634044,
+    "ast_hash": "76fd1e1a98628674338c9b7254eccff7",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Nav.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "f57412da15246660a58914916b117b29"
+    "mtime": 1780901840.7644026,
+    "ast_hash": "3b8876450be9baa914185d4bfc01e5d9",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\NeuralBrain.tsx": {
-    "mtime": 1778606624.0928862,
-    "hash": "dd870bd29a27b2824bc8074df829b534"
+    "mtime": 1780901840.767796,
+    "ast_hash": "b3019857b18cd53beec059f66cb6558b",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\PhotoIntelligence.tsx": {
-    "mtime": 1778606261.6294484,
-    "hash": "09702ab7f8a3cb317be4e1efe42f5be2"
+    "mtime": 1780901840.7727923,
+    "ast_hash": "33b331ac3cda018fcaefaa986b40d579",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\PlaygroundWindow.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "9a017c4e3a18eb9f0a8587fdf74d2cf6"
+    "mtime": 1780901840.798697,
+    "ast_hash": "e45465c9b25bb1acb3fc36e10f09dd6d",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Skills.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "2ab3e1f7ebf2e7fe10582a4301b2fc3f"
+    "mtime": 1780901840.7997031,
+    "ast_hash": "d8257c68deff19e3563db77500ec7ec5",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\Terminal.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "26e26f915c6886c695293ddce017be4b"
+    "mtime": 1780901840.8016958,
+    "ast_hash": "809788ccce60601c227275d4ec87d3f1",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\ThreeScene.tsx": {
-    "mtime": 1778601754.4379568,
-    "hash": "8dbdce32a404928df2833983a5a2e385"
+    "mtime": 1780901840.8028176,
+    "ast_hash": "1575b52125ee297c165ba890d5906ddb",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\eslint.config.mjs": {
     "mtime": 1778601754.4379568,
-    "hash": "6c4307ffa009658f5c97f5629094c0c2"
+    "ast_hash": "6c4307ffa009658f5c97f5629094c0c2",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\next-env.d.ts": {
     "mtime": 1778601987.904431,
-    "hash": "29f60a376e12bf72b67d4994fcc84214"
+    "ast_hash": "29f60a376e12bf72b67d4994fcc84214",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\next.config.ts": {
     "mtime": 1778601754.4379568,
-    "hash": "025f4fcb6024b3524d19492cf7ce54a2"
+    "ast_hash": "025f4fcb6024b3524d19492cf7ce54a2",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\postcss.config.mjs": {
     "mtime": 1778601754.4551373,
-    "hash": "481fac0fdecd70e1821cc30b86030c1a"
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\app\\layout.tsx": {
     "mtime": 1778601754.4167757,
-    "hash": "4add0550fc5c96330c183250701636fb"
+    "ast_hash": "4add0550fc5c96330c183250701636fb",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\app\\page.tsx": {
     "mtime": 1778602203.096297,
-    "hash": "1b1fb15015efb182dcc9a414a3b5b094"
+    "ast_hash": "1b1fb15015efb182dcc9a414a3b5b094",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\About.tsx": {
     "mtime": 1778604060.985507,
-    "hash": "0ca9cc143d8747c4ae723c14236fbdf4"
+    "ast_hash": "0ca9cc143d8747c4ae723c14236fbdf4",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\AgentNetwork.tsx": {
     "mtime": 1778609429.5837872,
-    "hash": "cc9a04c078236de0c3cb03222fdbf912"
+    "ast_hash": "cc9a04c078236de0c3cb03222fdbf912",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Contact.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "d635e29d8c02d6641f7d1880d48c2e92"
+    "ast_hash": "d635e29d8c02d6641f7d1880d48c2e92",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\CustomCursor.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "c3d14c8697ed4657dbb577191ae2bee1"
+    "ast_hash": "c3d14c8697ed4657dbb577191ae2bee1",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Gallery.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "cb85e74067773b5f9bb5311c265db2cb"
+    "ast_hash": "cb85e74067773b5f9bb5311c265db2cb",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Hero.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "25733ca16e0a687893b6a2a7a8d8601a"
+    "ast_hash": "25733ca16e0a687893b6a2a7a8d8601a",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\HorizontalScroll.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "688080398635d6bfb21c15179ceed706"
+    "ast_hash": "688080398635d6bfb21c15179ceed706",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Loader.tsx": {
     "mtime": 1778601754.4230688,
-    "hash": "d0f24e05d580dc101de3334c1e0f8d2a"
+    "ast_hash": "d0f24e05d580dc101de3334c1e0f8d2a",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Marquee.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "07fc5c98b2299abc382a38ea69346835"
+    "ast_hash": "07fc5c98b2299abc382a38ea69346835",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Nav.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "f57412da15246660a58914916b117b29"
+    "ast_hash": "f57412da15246660a58914916b117b29",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\NeuralBrain.tsx": {
     "mtime": 1778606624.0928862,
-    "hash": "dd870bd29a27b2824bc8074df829b534"
+    "ast_hash": "dd870bd29a27b2824bc8074df829b534",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\PhotoIntelligence.tsx": {
     "mtime": 1778606261.6294484,
-    "hash": "09702ab7f8a3cb317be4e1efe42f5be2"
+    "ast_hash": "09702ab7f8a3cb317be4e1efe42f5be2",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\PlaygroundWindow.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "9a017c4e3a18eb9f0a8587fdf74d2cf6"
+    "ast_hash": "9a017c4e3a18eb9f0a8587fdf74d2cf6",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Skills.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "2ab3e1f7ebf2e7fe10582a4301b2fc3f"
+    "ast_hash": "2ab3e1f7ebf2e7fe10582a4301b2fc3f",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\Terminal.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "26e26f915c6886c695293ddce017be4b"
+    "ast_hash": "26e26f915c6886c695293ddce017be4b",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\components\\ThreeScene.tsx": {
     "mtime": 1778601754.4379568,
-    "hash": "8dbdce32a404928df2833983a5a2e385"
+    "ast_hash": "8dbdce32a404928df2833983a5a2e385",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\AGENTS.md": {
     "mtime": 1778610687.6808805,
-    "hash": "5a55db3127d5caafc51d48f68a280669"
+    "ast_hash": "5a55db3127d5caafc51d48f68a280669",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\CLAUDE.md": {
-    "mtime": 1778608715.3079288,
-    "hash": "5c27369b226fcf2be8a6cfe52224e767"
+    "mtime": 1778615400.8845735,
+    "ast_hash": "4f7189a54c708b46a3095bf2ca2a330e",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\README.md": {
     "mtime": 1778601754.4167757,
-    "hash": "9162add00befbcdb432430f405c4ad8d"
+    "ast_hash": "9162add00befbcdb432430f405c4ad8d",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\AGENTS.md": {
     "mtime": 1778608713.4785967,
-    "hash": "9e09241799026ac05be315a2f0b50055"
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\CLAUDE.md": {
     "mtime": 1778608715.3079288,
-    "hash": "5c27369b226fcf2be8a6cfe52224e767"
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\README.md": {
     "mtime": 1778601754.4167757,
-    "hash": "9162add00befbcdb432430f405c4ad8d"
+    "ast_hash": "9162add00befbcdb432430f405c4ad8d",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\file.svg": {
     "mtime": 1778601754.457154,
-    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\globe.svg": {
     "mtime": 1778601754.4584074,
-    "hash": "2aaafa6a49b6563925fe440891e32717"
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\next.svg": {
     "mtime": 1778601754.4697118,
-    "hash": "8e061864f388b47f33a1c3780831193e"
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\vercel.svg": {
     "mtime": 1778601754.4697118,
-    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\window.svg": {
     "mtime": 1778601754.5017176,
-    "hash": "a2760511c65806022ad20adf74370ff3"
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\images\\photo.jpg": {
     "mtime": 1778601754.4697118,
-    "hash": "4d0ef2735c33ddbe491ec50bd480e9e1"
+    "ast_hash": "4d0ef2735c33ddbe491ec50bd480e9e1",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\file.svg": {
     "mtime": 1778601754.457154,
-    "hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\globe.svg": {
     "mtime": 1778601754.4584074,
-    "hash": "2aaafa6a49b6563925fe440891e32717"
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\next.svg": {
     "mtime": 1778601754.4697118,
-    "hash": "8e061864f388b47f33a1c3780831193e"
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\vercel.svg": {
     "mtime": 1778601754.4697118,
-    "hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\window.svg": {
     "mtime": 1778601754.5017176,
-    "hash": "a2760511c65806022ad20adf74370ff3"
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\images\\photo.jpg": {
     "mtime": 1778601754.4697118,
-    "hash": "4d0ef2735c33ddbe491ec50bd480e9e1"
+    "ast_hash": "4d0ef2735c33ddbe491ec50bd480e9e1",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\Deploy\\snapshot-20260512-222943\\public\\videos\\hero.mp4": {
     "mtime": 1778601754.5001588,
-    "hash": "69342d1a43174b7278fcf980e47e6934"
+    "ast_hash": "69342d1a43174b7278fcf980e47e6934",
+    "semantic_hash": ""
   },
   "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\videos\\hero.mp4": {
     "mtime": 1778601754.5001588,
-    "hash": "69342d1a43174b7278fcf980e47e6934"
+    "ast_hash": "69342d1a43174b7278fcf980e47e6934",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\cleanup-deprecated.mjs": {
+    "mtime": 1779472319.4956477,
+    "ast_hash": "51208407b06e051bb6d8ceab244db39c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\command-metadata.json": {
+    "mtime": 1779472319.4976585,
+    "ast_hash": "b25ed9a4d6c24c83d5af46ec69b99a97",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\critique-storage.mjs": {
+    "mtime": 1779472319.4986694,
+    "ast_hash": "69825b7f6236350030e72dd7dd3212b7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\design-parser.mjs": {
+    "mtime": 1779472319.5019505,
+    "ast_hash": "df65268bfe73ad8202ca309c2da3805c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\detect-csp.mjs": {
+    "mtime": 1779472319.502761,
+    "ast_hash": "0d3243060e66ba0d0a64684f9684ecc7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\detect.mjs": {
+    "mtime": 1779472319.5047717,
+    "ast_hash": "db2157bcff7ab1b222d68cf96cb8643c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\impeccable-paths.mjs": {
+    "mtime": 1779472319.5047717,
+    "ast_hash": "0e34c40e77c7a30eeabb1bac897f58a2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\is-generated.mjs": {
+    "mtime": 1779472319.5067813,
+    "ast_hash": "81ada1894b5f562b0993fdff1756d82c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-accept.mjs": {
+    "mtime": 1779472319.508792,
+    "ast_hash": "feee297789fa52b5901e21bb354e8a4f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-browser-session.js": {
+    "mtime": 1779472319.5108006,
+    "ast_hash": "e54c01fe1a8287f757161759beaab916",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-browser.js": {
+    "mtime": 1779472319.5128078,
+    "ast_hash": "09d5959c4f68346ac3e032a1e16f8924",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-complete.mjs": {
+    "mtime": 1779472319.5145595,
+    "ast_hash": "0ed6226feb3d80adf38f2098b6d7efd4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-completion.mjs": {
+    "mtime": 1779472319.5182061,
+    "ast_hash": "c51f1de5c7aae5aa3f2c67f5d9875d3e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-inject.mjs": {
+    "mtime": 1779472319.520221,
+    "ast_hash": "01365c3718e920dbeee5eeb9159093fa",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-poll.mjs": {
+    "mtime": 1779472319.520221,
+    "ast_hash": "7b78710647b202a90d99852bdb7a5135",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-resume.mjs": {
+    "mtime": 1779472319.5230672,
+    "ast_hash": "9187fc4ae434c0573b7c84c95b05f744",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-server.mjs": {
+    "mtime": 1779472319.5245326,
+    "ast_hash": "2754268fc4579377e0d40d6a2e34679a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-session-store.mjs": {
+    "mtime": 1779472319.5268424,
+    "ast_hash": "b0c628113419432d164204b18587d681",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-status.mjs": {
+    "mtime": 1779472319.528853,
+    "ast_hash": "f7f787396f44ef06c890f97c45d0ba75",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live-wrap.mjs": {
+    "mtime": 1779472319.528853,
+    "ast_hash": "9612f1254ce763221690053592892110",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\live.mjs": {
+    "mtime": 1779472319.5317543,
+    "ast_hash": "073965c7d10925f8ad9651a336220ee8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\load-context.mjs": {
+    "mtime": 1779472319.533931,
+    "ast_hash": "f96317a92230153a77069e4f81bd8e11",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\modern-screenshot.umd.js": {
+    "mtime": 1779472319.5361784,
+    "ast_hash": "c6afaf6ebceb162206f6a2e5b0ed653c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\scripts\\pin.mjs": {
+    "mtime": 1779472319.5381954,
+    "ast_hash": "59e1f8315c2083fb7997e5ff3edfcb57",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.codex\\hooks.json": {
+    "mtime": 1778610673.0675006,
+    "ast_hash": "7a803fdedc3c956686640b58532047e8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.obsidian\\app.json": {
+    "mtime": 1778870515.0978034,
+    "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.obsidian\\appearance.json": {
+    "mtime": 1778870515.1173968,
+    "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.obsidian\\core-plugins.json": {
+    "mtime": 1778870500.957821,
+    "ast_hash": "7c877bea49eaeabb100563bd157b9051",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.obsidian\\graph.json": {
+    "mtime": 1778870516.067,
+    "ast_hash": "810c76a59bf11ad6a81687f9d9bf4043",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.obsidian\\workspace.json": {
+    "mtime": 1778870515.0998948,
+    "ast_hash": "7e3bf6141725677568eda09e758bdf47",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\ObsidianGraph.tsx": {
+    "mtime": 1780901840.769793,
+    "ast_hash": "7fc9e051898a466ab79b5da46bf58456",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\PlaygroundCanvas.tsx": {
+    "mtime": 1780901840.7957013,
+    "ast_hash": "50dce5fcbfd51264a9e56aceec4f4f23",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\PlayCanvasDemo.tsx": {
+    "mtime": 1780901840.7780268,
+    "ast_hash": "222690a3c4583c26ef0a07bdb7a35408",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\lib\\audio.ts": {
+    "mtime": 1778613189.7046378,
+    "ast_hash": "263fd20c2552de428ad48a83c3333ce0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\lib\\effects.tsx": {
+    "mtime": 1778616288.7061799,
+    "ast_hash": "c08865564f07d1b56a2296408ab2e54e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\lib\\scene-camera.tsx": {
+    "mtime": 1778614361.7540076,
+    "ast_hash": "5cabf9b160b0ea6bab6a26112968f59a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\BeachScene.tsx": {
+    "mtime": 1778616455.8475568,
+    "ast_hash": "4064fbcfde4603048574101fb25f8123",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\CarScene.tsx": {
+    "mtime": 1780901840.7800295,
+    "ast_hash": "ea432b9e102f22ae70b578096569b5b6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\DesignShowcase.tsx": {
+    "mtime": 1780901840.7815523,
+    "ast_hash": "3b1e0630568bcaffa28a5f647a66bac0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\DubaiScene.tsx": {
+    "mtime": 1780901840.78423,
+    "ast_hash": "49f26ea180a20fde039db062d0ddafa1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\EarthScene.tsx": {
+    "mtime": 1778616513.100952,
+    "ast_hash": "e6050c2c06071219832d4e594a601fc8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\GalaxyScene.tsx": {
+    "mtime": 1780901840.7862384,
+    "ast_hash": "ebc4c11dd8ac30c85d872cb08b1250a7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\NebulaScene.tsx": {
+    "mtime": 1780901840.7896364,
+    "ast_hash": "8eebb9c9a9cfd04df4eb2588c6658b0b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\SedanScene.tsx": {
+    "mtime": 1780901840.791556,
+    "ast_hash": "c331dc83acbdf3e7519dd16425ece743",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\components\\playground\\scenes\\TruckScene.tsx": {
+    "mtime": 1780901840.793701,
+    "ast_hash": "5b7dcca357f07c1955a4608aa137c56a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\package.json": {
+    "mtime": 1778700591.2329328,
+    "ast_hash": "956df886a33ac029c70fd0219eb1cdb6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\public\\graph\\graph.json": {
+    "mtime": 1778610703.330104,
+    "ast_hash": "576365f65faee02314f13fec4ef79f39",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\scripts\\sync-graph.mjs": {
+    "mtime": 1778613137.684049,
+    "ast_hash": "1790ce95f15b684de09f964707a094d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\skills-lock.json": {
+    "mtime": 1780901653.6211145,
+    "ast_hash": "7a302a983e808e74b5f76f4789f44363",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\tsconfig.json": {
+    "mtime": 1778601754.5017176,
+    "ast_hash": "ab575e944f15d39a5486cf9fca385c5e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\SKILL.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "259cfd39515b1b390c02c811de7491f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\agents\\impeccable-asset-producer.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "892906b3db9443e58267e77d4038a0fb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\adapt.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "27c29f5a41c6104b89a5ac22d6476853",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\animate.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "b62d806becc589f6e322568dbf1643ec",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\audit.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "bfa673574701e2910ca2b3473aa1c6ad",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\bolder.md": {
+    "mtime": 1779472319.434369,
+    "ast_hash": "633d0f931184a8aac040a37ba0c2c0f6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\brand.md": {
+    "mtime": 1779472319.4439406,
+    "ast_hash": "74e97fbbaad8eba976b3fd29943f4424",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\clarify.md": {
+    "mtime": 1779472319.4439406,
+    "ast_hash": "9dc6a767d5bbd31e9117d36d06e1261e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\codex.md": {
+    "mtime": 1779472319.4439406,
+    "ast_hash": "c044e7cf44c58dea75e9c6a3413e8d70",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\cognitive-load.md": {
+    "mtime": 1779472319.4499745,
+    "ast_hash": "464d1b1b3566c74909fadcd2c13bc544",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\color-and-contrast.md": {
+    "mtime": 1779472319.4519892,
+    "ast_hash": "c51e5bca12b63f220ad15454852a8594",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\colorize.md": {
+    "mtime": 1779472319.4530714,
+    "ast_hash": "c9702b3f0c17fa6846747d369ad82699",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\craft.md": {
+    "mtime": 1779472319.4530714,
+    "ast_hash": "59729d8216df64493363d604df736563",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\critique.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "ccf66bd0f3b8fd0d11592290d078418e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\delight.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "c302379f6c88c20d4886636aaf5e6dde",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\distill.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "15b690d4b8f6bf9c8a0d5208f1f6f1fb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\document.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "8faba1b504418148860d159448194fc9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\extract.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "bcbed7005945d9de131f69985cbc5e6f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\harden.md": {
+    "mtime": 1779472319.4563303,
+    "ast_hash": "b8c6ce7f60733c8dab39b12c7957750b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\heuristics-scoring.md": {
+    "mtime": 1779472319.466742,
+    "ast_hash": "f1606921268571e14591682483b595ef",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\interaction-design.md": {
+    "mtime": 1779472319.4677827,
+    "ast_hash": "ea39b98601f17b5a87f7de799b953000",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\layout.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "400e8cbbc0688d27d288f80c5b52314a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\live.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "443d531ec715bb64e48b660671e3ad78",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\motion-design.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "95de769ab6e30a4214a969ebb25ebe89",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\onboard.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "8def483b066f2c7fb906c313e3653c10",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\optimize.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "613f211310d45abd984d0bd610abc1fb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\overdrive.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "891190b0148e5156aa007ca5917a0bb4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\personas.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "3022b396ec3f0977be627875594bfa81",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\polish.md": {
+    "mtime": 1779472319.4707663,
+    "ast_hash": "5ba31783c05352cbda780abd9e12d969",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\product.md": {
+    "mtime": 1779472319.4832122,
+    "ast_hash": "c073e67bbcec51f31af4ba132730aca9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\quieter.md": {
+    "mtime": 1779472319.4853895,
+    "ast_hash": "9b34ed291f042b1dad31f66f487c4137",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\responsive-design.md": {
+    "mtime": 1779472319.4853895,
+    "ast_hash": "3a0e2834961edfe9d44cef19ffc84737",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\shape.md": {
+    "mtime": 1779472319.4853895,
+    "ast_hash": "aab83193a1a58010b1de9f67074b5915",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\spatial-design.md": {
+    "mtime": 1779472319.4896178,
+    "ast_hash": "28fd3d7f36c9ad72fdc5c3a90c7f5505",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\teach.md": {
+    "mtime": 1779472319.4916296,
+    "ast_hash": "ab273dd5cd15e248ebdf7f52671e3f81",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\typeset.md": {
+    "mtime": 1779472319.4916296,
+    "ast_hash": "3b4d239361890c9db44b5484d002f2d2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\typography.md": {
+    "mtime": 1779472319.4936392,
+    "ast_hash": "841fa5dc3d8cf998ecb63b211b766c7c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.agents\\skills\\impeccable\\reference\\ux-writing.md": {
+    "mtime": 1779472319.4936392,
+    "ast_hash": "74e4aac960c114a7b8761210f80a8cc5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.claude\\skills\\3d-realworld-renderer.md": {
+    "mtime": 1778617574.2083454,
+    "ast_hash": "78f91e70547a6a5cba00e2d30718c277",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.claude\\skills\\interactive-map-3d.md": {
+    "mtime": 1778617574.2925317,
+    "ast_hash": "b199448830577b8a326b6ffa67a2b6c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\.claude\\skills\\scene-composer-3d.md": {
+    "mtime": 1778617574.3375282,
+    "ast_hash": "1039c4debc47867b2bbe6360ef1aa030",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\3d-realworld-renderer\\SKILL.md": {
+    "mtime": 1778617574.2083454,
+    "ast_hash": "78f91e70547a6a5cba00e2d30718c277",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\DESIGN.md": {
+    "mtime": 1780901731.3803227,
+    "ast_hash": "c97a5fa5fa425cc8a480ebbac92309df",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\interactive-map-3d\\SKILL.md": {
+    "mtime": 1778617574.2925317,
+    "ast_hash": "b199448830577b8a326b6ffa67a2b6c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\memory\\2026-05-12_graphify-install.md": {
+    "mtime": 1778610820.3536553,
+    "ast_hash": "94dd51db39e48da97553272094b5b1f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\memory\\2026-05-12_playground-enhancement.md": {
+    "mtime": 1778614607.218079,
+    "ast_hash": "17471cbf7b81eb397358853293352bc9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\memory\\2026-05-12_playground-three-features.md": {
+    "mtime": 1778615229.0698898,
+    "ast_hash": "08a984991bce9444c0337d9dcb7e9700",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\memory\\2026-05-13_playground-polish.md": {
+    "mtime": 1778616127.241784,
+    "ast_hash": "0ce511343b5c6398573dd43e40b9b9cf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\memory\\2026-05-13_playground-realism.md": {
+    "mtime": 1778616629.2276032,
+    "ast_hash": "2d10a99c14de75c8b9e5f65ed79132e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_0.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "5ca9ba83f0ea73722aa02aad7a1f7c4a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_1.md": {
+    "mtime": 1778610783.3661633,
+    "ast_hash": "8387e721d62e8c08c1cf2c5297c3eb60",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_10.md": {
+    "mtime": 1778610783.4038742,
+    "ast_hash": "4becfc042602afe7f9cac86e18d6d76d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_11.md": {
+    "mtime": 1778610783.4038742,
+    "ast_hash": "c413553f2e83c4a7e5432aa27557737c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_12.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "955f2cb8a348bb0e71b7d767b8aba54e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_13.md": {
+    "mtime": 1778610783.387999,
+    "ast_hash": "fa2a7364457c7a956e479a3915e5e609",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_14.md": {
+    "mtime": 1778610783.3540537,
+    "ast_hash": "bf60d53c79d67b1e482b68adf02680c1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_15.md": {
+    "mtime": 1778610783.3580964,
+    "ast_hash": "9819bc52d077391852a30c4153f1e5d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_16.md": {
+    "mtime": 1778610783.362127,
+    "ast_hash": "1ca3e8c92babb061d736255312413632",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_17.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "cc70b3fbfad3e5220ef36b8966e8309a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_18.md": {
+    "mtime": 1778610783.387999,
+    "ast_hash": "f2e74228997197234b27bdbbb777ced8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_19.md": {
+    "mtime": 1778610783.387999,
+    "ast_hash": "3ec27452d9d78bece38a17be1d84b3a8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_2.md": {
+    "mtime": 1778610783.3661633,
+    "ast_hash": "cebd48933f7aa55939edb56e386b9df4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_20.md": {
+    "mtime": 1778610783.4038742,
+    "ast_hash": "c38b4e668f50db252b48ef44d5a0352a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_21.md": {
+    "mtime": 1778610783.3560767,
+    "ast_hash": "97bd41ab5f0d7889182c4d20033a584e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_22.md": {
+    "mtime": 1778610783.387999,
+    "ast_hash": "d8358b5243d8fd42830429e292123193",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_23.md": {
+    "mtime": 1778610783.387999,
+    "ast_hash": "73aff77b52c7736f11d16ad50ba61896",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_24.md": {
+    "mtime": 1778610783.4038742,
+    "ast_hash": "5e0fd829bb7e13d29b857d19ccfeff79",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_3.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "5e1560c24bc3b04fc2e56a42c6a65d58",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_4.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "6865930980f05d445c144f0218fd953c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_5.md": {
+    "mtime": 1778610783.3641443,
+    "ast_hash": "0b035c29b87b3425ccad50c236d30289",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_6.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "426771524ccbabfe55671f3776405c18",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_7.md": {
+    "mtime": 1778610783.3661633,
+    "ast_hash": "a272f21179bb7fd14a0d7dc3f831dbc3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_8.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "c0bc68a8cfd54bf49e34ea7b9cf60c9b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Community_9.md": {
+    "mtime": 1778610783.372172,
+    "ast_hash": "da94a2286c5829ac6329c080906c4c81",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\Home.md": {
+    "mtime": 1778610802.725715,
+    "ast_hash": "d6463466e858df6ac7e6bb571c18df48",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\notes\\index.md": {
+    "mtime": 1778610783.4038742,
+    "ast_hash": "7e07d6cc0419ac2f6d6148a622ff5f38",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\osama.alahmad\\Desktop\\Osama.aifinxa.io\\scene-composer-3d\\SKILL.md": {
+    "mtime": 1778617574.3375282,
+    "ast_hash": "1039c4debc47867b2bbe6360ef1aa030",
+    "semantic_hash": ""
   }
 }

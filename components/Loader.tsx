@@ -56,13 +56,13 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           exit={{ opacity: 0, scale: 1.06 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none overflow-hidden"
-          style={{ backgroundColor: '#0a0a0a' }}
+          style={{ backgroundColor: '#0a0e14' }}
         >
           {/* Ambient glow */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: 'radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,169,110,0.06) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse 60% 50% at 50% 60%, rgba(27, 163, 184,0.06) 0%, transparent 70%)',
             }}
           />
 
@@ -74,14 +74,14 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
             className="mb-16 text-center"
           >
             <p
-              className="text-[#c9a96e] mb-5 tracking-[0.9em] uppercase"
+              className="text-[#1ba3b8] mb-5 tracking-[0.9em] uppercase"
               style={{ fontFamily: 'var(--font-mono)', fontSize: '10px' }}
             >
               Osama AlAhmad
             </p>
             <h1
               className="text-[clamp(4rem,12vw,9rem)] font-black leading-none text-white tracking-tight"
-              style={{ fontFamily: 'var(--font-playfair)', letterSpacing: '-0.04em' }}
+              style={{ fontFamily: 'var(--font-inter)', letterSpacing: '-0.04em' }}
             >
               Portfolio
             </h1>
@@ -98,7 +98,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
                 className="flex gap-3 items-start"
                 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', lineHeight: 1.6 }}
               >
-                <span style={{ color: line.type === 'ok' ? '#c9a96e' : 'rgba(255,255,255,0.25)', flexShrink: 0 }}>
+                <span style={{ color: line.type === 'ok' ? '#1ba3b8' : 'rgba(255,255,255,0.25)', flexShrink: 0 }}>
                   {line.prompt}
                 </span>
                 <span style={{ color: line.type === 'ok' ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.25)' }}>
@@ -112,7 +112,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           <div className="w-72 space-y-2">
             <div className="h-px bg-white/8 relative overflow-hidden">
               <motion.div
-                className="absolute top-0 left-0 h-full bg-[#c9a96e]"
+                className="absolute top-0 left-0 h-full bg-[#1ba3b8]"
                 animate={{ width: `${pct}%` }}
                 transition={{ duration: 0.12, ease: 'linear' }}
               />
@@ -126,10 +126,10 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           </div>
 
           {/* Corner brackets */}
-          <div className="absolute top-8 left-8 w-8 h-8 border-l border-t border-[#c9a96e]/20" />
-          <div className="absolute top-8 right-8 w-8 h-8 border-r border-t border-[#c9a96e]/20" />
-          <div className="absolute bottom-8 left-8 w-8 h-8 border-l border-b border-[#c9a96e]/20" />
-          <div className="absolute bottom-8 right-8 w-8 h-8 border-r border-b border-[#c9a96e]/20" />
+          <div className="absolute top-8 left-8 w-8 h-8 border-l border-t border-[#1ba3b8]/20" />
+          <div className="absolute top-8 right-8 w-8 h-8 border-r border-t border-[#1ba3b8]/20" />
+          <div className="absolute bottom-8 left-8 w-8 h-8 border-l border-b border-[#1ba3b8]/20" />
+          <div className="absolute bottom-8 right-8 w-8 h-8 border-r border-b border-[#1ba3b8]/20" />
         </motion.div>
       )}
     </AnimatePresence>

@@ -1,5 +1,11 @@
 @import "tailwindcss";
 @import "./design-tokens.generated.css";
+
+/* The knowledge-graph data and generated wiki are corpus/data, not UI source.
+   Excluding them keeps Tailwind from minting dead arbitrary-value classes
+   (e.g. text-[#c9a96e]) out of code snapshots embedded in the graph cache. */
+@source not "../graphify-out";
+@source not "../notes";
 /* DESIGN.md is the source of truth for colour / type / spacing tokens.
    Run `npm run design:sync` to regenerate design-tokens.generated.css.
    It supplies the @theme block (including legacy aliases gold / gold-light / dark / surface). */
@@ -8,6 +14,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -15,9 +23,11 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0a0e14;
+  color: #e5e9f0;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.011em;
   cursor: none;
   overflow-x: hidden;
 }
@@ -30,15 +40,94 @@ body {
   width: 2px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0a0e14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
+  background: #1ba3b8;
 }
 
 ::selection {
-  background: #c9a96e;
-  color: #000;
+  background: #138294;
+  color: #e5e9f0;
+}
+
+/* ── Blueprint ground — faint engineering grid ───────────────────────── */
+.bg-blueprint {
+  background-image:
+    linear-gradient(rgba(19, 130, 148, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 130, 148, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+}
+
+.bg-blueprint-dense {
+  background-image:
+    linear-gradient(rgba(19, 130, 148, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 130, 148, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Radial cyan vignette */
+.bg-radial-fade {
+  background:
+    radial-gradient(ellipse at top, rgba(19, 130, 148, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(34, 211, 238, 0.08) 0%, transparent 60%);
+}
+
+/* Subtle noise overlay */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Cyan gradient text — keep end stops bright enough to read on dark bg */
+.text-gradient {
+  background: linear-gradient(135deg, #e5e9f0 0%, #67e8f9 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-accent-grad {
+  background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section heading divider */
+.hr-accent {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #138294, transparent);
+}
+
+/* Card baseline — steel panel with hairline border */
+.card {
+  background: linear-gradient(180deg, rgba(30, 42, 56, 0.7), rgba(16, 24, 32, 0.85));
+  border: 1px solid #2a3a4e;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.card-glow {
+  position: relative;
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.4), transparent 40%, transparent 60%, rgba(19, 130, 148, 0.3));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
 }
 
 @keyframes shimmer {
@@ -49,6 +138,15 @@ body {
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+/* SnagIT marquee alias */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
 }
 
 @keyframes blink-cursor {
@@ -82,4 +180,28 @@ body {
 @keyframes holo-slide {
   0%   { transform: translateX(-120%) skewX(-15deg); }
   100% { transform: translateX(220%)  skewX(-15deg); }
+}
+
+/* Live-indicator pulse */
+@keyframes ping-soft {
+  0% { transform: scale(1); opacity: 0.9; }
+  75%, 100% { transform: scale(2.5); opacity: 0; }
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #22d3ee;
+  animation: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track { animation: none; }
 }

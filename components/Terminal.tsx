@@ -171,12 +171,12 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
                       <div key={i} className="flex gap-2.5">
                         {line.type === 'cmd' && (
                           <>
-                            <span className="text-[#c9a96e] flex-shrink-0">{line.prompt}</span>
+                            <span className="text-[#1ba3b8] flex-shrink-0">{line.prompt}</span>
                             <span className="text-white/65">{line.text}</span>
                           </>
                         )}
                         {line.type === 'ok' && (
-                          <span className="text-[#c9a96e] pl-5">{line.text}</span>
+                          <span className="text-[#1ba3b8] pl-5">{line.text}</span>
                         )}
                         {line.type === 'out' && (
                           <span className="text-white/35 pl-5">{line.text}</span>
@@ -187,7 +187,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
                     {/* Extra lines from user commands */}
                     {extraLines.map((line, i) => (
                       <div key={`x${i}`} className="flex gap-2.5">
-                        {line.type === 'cmd' && <span className="text-[#c9a96e]">{line.text}</span>}
+                        {line.type === 'cmd' && <span className="text-[#1ba3b8]">{line.text}</span>}
                         {line.type === 'out' && <span className="text-white/35 pl-5">{line.text}</span>}
                       </div>
                     ))}
@@ -195,9 +195,9 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
                     {/* Cursor after boot finishes */}
                     {visibleLines >= BOOT_SEQUENCE.length && (
                       <div className="flex gap-2.5 items-center">
-                        <span className="text-[#c9a96e]">›</span>
+                        <span className="text-[#1ba3b8]">›</span>
                         <span
-                          className="inline-block w-[7px] bg-[#c9a96e]"
+                          className="inline-block w-[7px] bg-[#1ba3b8]"
                           style={{ height: '13px', animation: 'blink-cursor 1.1s step-end infinite' }}
                         />
                       </div>
@@ -213,7 +213,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
                     className="border-t border-white/8 flex items-center px-4 py-2.5 gap-2"
                     onMouseDown={(e) => e.stopPropagation()}
                   >
-                    <span className="text-[#c9a96e] flex-shrink-0" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}>›</span>
+                    <span className="text-[#1ba3b8] flex-shrink-0" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}>›</span>
                     <input
                       ref={inputRef}
                       value={input}

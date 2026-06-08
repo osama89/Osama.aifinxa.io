@@ -65,7 +65,7 @@ function SpikyBall() {
       <pointLight position={[0, 0, 0]} intensity={60} color="#ffaa33" distance={12} decay={2} />
 
       {/* Outer rim light */}
-      <pointLight position={[4, 3, 3]} intensity={20} color="#c9a96e" distance={15} decay={2} />
+      <pointLight position={[4, 3, 3]} intensity={20} color="#1ba3b8" distance={15} decay={2} />
 
       {/* Spiky sphere */}
       <mesh ref={meshRef} geometry={geometry}>

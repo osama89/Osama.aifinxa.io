@@ -37,9 +37,9 @@ function AnimatedRole() {
   }, [displayed, deleting, roleIdx]);
 
   return (
-    <span className="text-[#c9a96e]">
+    <span className="text-[#1ba3b8]">
       {displayed}
-      <span className="inline-block w-[3px] h-[1em] bg-[#c9a96e] ml-1 align-middle animate-pulse" />
+      <span className="inline-block w-[3px] h-[1em] bg-[#1ba3b8] ml-1 align-middle animate-pulse" />
     </span>
   );
 }
@@ -77,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-6"
+          className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-6"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           AI & BI Professional · Dubai, UAE
@@ -88,7 +88,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="text-5xl md:text-6xl lg:text-7xl font-black leading-none mb-4"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           Osama<br />AlAhmad.
         </motion.h1>
@@ -98,7 +98,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-2xl md:text-3xl font-black mb-8 h-10"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           <AnimatedRole />
         </motion.div>
@@ -126,8 +126,8 @@ export default function Hero() {
           {STATS.map(({ value, label }) => (
             <div key={label}>
               <p
-                className="text-[#c9a96e] text-xl font-black"
-                style={{ fontFamily: 'var(--font-playfair)' }}
+                className="text-[#1ba3b8] text-xl font-black"
+                style={{ fontFamily: 'var(--font-inter)' }}
               >
                 {value}
               </p>
@@ -150,7 +150,7 @@ export default function Hero() {
         >
           <a
             href="#about"
-            className="px-8 py-3 bg-[#c9a96e] text-black text-xs tracking-[0.3em] uppercase font-medium hover:bg-white transition-colors duration-300"
+            className="px-8 py-3 bg-[#1ba3b8] text-black text-xs tracking-[0.3em] uppercase font-medium hover:bg-white transition-colors duration-300"
             style={{ fontFamily: 'var(--font-inter)' }}
             data-hover="true"
           >
@@ -158,7 +158,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="text-white/50 text-xs tracking-[0.3em] uppercase hover:text-[#c9a96e] transition-colors duration-300 flex items-center gap-3"
+            className="text-white/50 text-xs tracking-[0.3em] uppercase hover:text-[#1ba3b8] transition-colors duration-300 flex items-center gap-3"
             style={{ fontFamily: 'var(--font-inter)' }}
             data-hover="true"
           >
@@ -180,7 +180,7 @@ export default function Hero() {
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.55) 18%, transparent 55%)',
+              'linear-gradient(to right, #0a0e14 0%, rgba(10,10,10,0.55) 18%, transparent 55%)',
           }}
         />
         <AgentNetwork />
@@ -193,12 +193,12 @@ export default function Hero() {
         transition={{ delay: 2.2, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-[#c9a96e] to-transparent animate-pulse" />
+        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-[#1ba3b8] to-transparent animate-pulse" />
       </motion.div>
 
       {/* Corner frames */}
-      <div className="absolute top-8 left-8 w-10 h-10 border-l border-t border-[#c9a96e]/30 pointer-events-none" />
-      <div className="absolute bottom-8 left-8 w-10 h-10 border-l border-b border-[#c9a96e]/30 pointer-events-none" />
+      <div className="absolute top-8 left-8 w-10 h-10 border-l border-t border-[#1ba3b8]/30 pointer-events-none" />
+      <div className="absolute bottom-8 left-8 w-10 h-10 border-l border-b border-[#1ba3b8]/30 pointer-events-none" />
     </section>
   );
 }

@@ -91,7 +91,7 @@ const EDGES: Edge[] = [
 ];
 
 const TYPE_COLOR: Record<string, string> = {
-  main: '#c9a96e', core: '#d4d4ff', ai: '#b8a4e8',
+  main: '#1ba3b8', core: '#d4d4ff', ai: '#b8a4e8',
   data: '#7faad4', ops: '#d9a26f',  alert: '#e07060', time: '#64dfdf',
 };
 
@@ -107,7 +107,7 @@ interface MainCogState {
 const MAIN_COG: MainCogState[] = [
   { id: 'SCAN',     label: 'Observing environment',     color: '#64dfdf', glyph: 8 },
   { id: 'PLAN',     label: 'Decomposing goals',         color: '#b8a4e8', glyph: 6 },
-  { id: 'DISPATCH', label: 'Delegating to agents',      color: '#c9a96e', glyph: 5 },
+  { id: 'DISPATCH', label: 'Delegating to agents',      color: '#1ba3b8', glyph: 5 },
   { id: 'SYNTH',    label: 'Synthesizing results',      color: '#7faad4', glyph: 4 },
   { id: 'LEARN',    label: 'Reinforcing memory',        color: '#d4d4ff', glyph: 6 },
 ];
@@ -277,7 +277,7 @@ export default function AgentNetwork() {
       NODES.forEach(n => {
         if (n.id !== 'main') setTimeout(() => spawn('main', n.id, 4), Math.random() * 800);
       });
-      addLog('MAIN AGENT ⟶ BROADCAST ⟶ ALL AGENTS', '#c9a96e');
+      addLog('MAIN AGENT ⟶ BROADCAST ⟶ ALL AGENTS', '#1ba3b8');
     }
     broadcastRef.current = broadcast;
 
@@ -434,7 +434,7 @@ export default function AgentNetwork() {
       // 5) Three orbiting status indicators
       const indicators = [
         { color: '#64dfdf', label: 'CPU', radius: r * 1.85, speed: 0.6,  phase: 0 },
-        { color: '#c9a96e', label: 'MEM', radius: r * 2.05, speed: -0.4, phase: 2 },
+        { color: '#1ba3b8', label: 'MEM', radius: r * 2.05, speed: -0.4, phase: 2 },
         { color: '#ff7eb3', label: 'THR', radius: r * 1.7,  speed: 0.9,  phase: 4 },
       ];
       indicators.forEach((ind) => {
@@ -661,7 +661,7 @@ export default function AgentNetwork() {
         for (let w = 0; w < 2; w++) {
           const wt = Math.min(1, s.broadcastT + w * 0.18);
           ctx.beginPath(); ctx.arc(origin.x, origin.y, wt * maxR, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(201,169,110,${(1 - wt) * (w === 0 ? 0.5 : 0.25)})`;
+          ctx.strokeStyle = `rgba(27, 163, 184,${(1 - wt) * (w === 0 ? 0.5 : 0.25)})`;
           ctx.lineWidth = w === 0 ? 2 : 1; ctx.stroke();
         }
         s.broadcastT += 0.01;
@@ -682,7 +682,7 @@ export default function AgentNetwork() {
             const a = Math.max(0, (1 - phase)) * 0.55 * (1 - ring * 0.28);
             ctx.beginPath();
             ctx.arc(origin.x, origin.y, rad, 0, Math.PI * 2);
-            ctx.strokeStyle = ring === 0 ? '#ffffff' : '#c9a96e';
+            ctx.strokeStyle = ring === 0 ? '#ffffff' : '#1ba3b8';
             ctx.lineWidth = ring === 0 ? Math.max(0.5, 2.5 - phase * 2) : Math.max(0.4, 1.5 - phase);
             ctx.globalAlpha = a;
             ctx.stroke();
@@ -794,17 +794,17 @@ export default function AgentNetwork() {
               ctx.beginPath();
               ctx.moveTo(sc.x, sc.y);
               ctx.lineTo(partnerSc.x, partnerSc.y);
-              ctx.strokeStyle = '#c9a96e';
+              ctx.strokeStyle = '#1ba3b8';
               ctx.lineWidth = 3 + Math.sin(s.pulseT * 4) * 0.6;
               ctx.globalAlpha = 0.55;
               ctx.shadowBlur = 14;
-              ctx.shadowColor = '#c9a96e';
+              ctx.shadowColor = '#1ba3b8';
               ctx.stroke();
               ctx.shadowBlur = 0;
               // Small dot at the partner end
               ctx.beginPath();
               ctx.arc(partnerSc.x, partnerSc.y, 4 + Math.sin(s.pulseT * 5) * 0.8, 0, Math.PI * 2);
-              ctx.fillStyle = '#c9a96e';
+              ctx.fillStyle = '#1ba3b8';
               ctx.globalAlpha = 0.9;
               ctx.fill();
               ctx.restore();
@@ -909,7 +909,7 @@ export default function AgentNetwork() {
       // ── HUD ─────────────────────────────────────────────────────
       ctx.save();
       ctx.font = `9px 'JetBrains Mono', monospace`;
-      ctx.fillStyle = 'rgba(201,169,110,0.32)'; ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(27, 163, 184,0.32)'; ctx.textAlign = 'left';
       ctx.fillText(`SIG ${s.particles.length.toString().padStart(2,'0')}  ·  NODES ${NODES.length}  ·  EDGES ${EDGES.length}`, 12, H - 14);
       ctx.textAlign = 'right';
       ctx.fillText(`ROT ${(s.rotY*57.3).toFixed(0)}° ${(s.rotX*57.3).toFixed(0)}°  ·  ${(s.zoom*100).toFixed(0)}%`, W - 12, H - 14);
@@ -1025,11 +1025,11 @@ export default function AgentNetwork() {
         style={{ fontFamily: 'var(--font-mono)' }}
       >
         <div
-          className="border border-[#c9a96e]/30 px-4 py-2.5 flex items-center gap-5"
+          className="border border-[#1ba3b8]/30 px-4 py-2.5 flex items-center gap-5"
           style={{
             background: 'rgba(7,7,11,0.78)',
             backdropFilter: 'blur(18px)',
-            boxShadow: '0 0 24px rgba(201,169,110,0.14)',
+            boxShadow: '0 0 24px rgba(27, 163, 184,0.14)',
             minWidth: 360,
           }}
         >
@@ -1061,7 +1061,7 @@ export default function AgentNetwork() {
           {/* Partner */}
           <div>
             <p className="text-white/30 text-[6.5px] tracking-[0.35em] uppercase">Partner</p>
-            <p className="text-[#c9a96e] text-[10px] font-bold truncate max-w-[100px]">
+            <p className="text-[#1ba3b8] text-[10px] font-bold truncate max-w-[100px]">
               {hud.partnerLabel ?? '—'}
             </p>
           </div>
@@ -1088,7 +1088,7 @@ export default function AgentNetwork() {
             <p
               className="text-[10px] font-bold tabular-nums transition-colors"
               style={{
-                color: hud.broadcastIn <= 3 ? '#ffffff' : '#c9a96e',
+                color: hud.broadcastIn <= 3 ? '#ffffff' : '#1ba3b8',
                 textShadow: hud.broadcastIn <= 3 ? '0 0 8px #ffffff' : 'none',
               }}
             >
@@ -1099,7 +1099,7 @@ export default function AgentNetwork() {
           {/* Broadcast now button */}
           <button
             onClick={() => broadcastRef.current()}
-            className="ml-1 border border-[#c9a96e]/50 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-black transition-colors duration-200 px-2.5 py-1 text-[8px] tracking-[0.25em]"
+            className="ml-1 border border-[#1ba3b8]/50 text-[#1ba3b8] hover:bg-[#1ba3b8] hover:text-black transition-colors duration-200 px-2.5 py-1 text-[8px] tracking-[0.25em]"
             data-hover="true"
           >
             BROADCAST
@@ -1130,11 +1130,11 @@ export default function AgentNetwork() {
             <p className="text-white/45 text-[9px] leading-relaxed mb-3">{selectedNode.description}</p>
             <div className="flex gap-5 mb-3">
               <div>
-                <p className="text-[#c9a96e] text-sm font-bold">{['MAIN','CORE','SUB','TIME'][selectedNode.tier]}</p>
+                <p className="text-[#1ba3b8] text-sm font-bold">{['MAIN','CORE','SUB','TIME'][selectedNode.tier]}</p>
                 <p className="text-white/25 text-[7px] tracking-widest uppercase">Layer</p>
               </div>
               <div>
-                <p className="text-[#c9a96e] text-sm font-bold capitalize">{selectedNode.type}</p>
+                <p className="text-[#1ba3b8] text-sm font-bold capitalize">{selectedNode.type}</p>
                 <p className="text-white/25 text-[7px] tracking-widest uppercase">Type</p>
               </div>
             </div>
@@ -1145,7 +1145,7 @@ export default function AgentNetwork() {
               ))}
             </div>
             {selectedNode.tier === 0 && (
-              <p className="text-[#c9a96e]/40 text-[7.5px] tracking-[0.15em] mt-3 border-t border-white/8 pt-2">
+              <p className="text-[#1ba3b8]/40 text-[7.5px] tracking-[0.15em] mt-3 border-t border-white/8 pt-2">
                 CLICK AGAIN → BROADCAST TO ALL
               </p>
             )}

@@ -208,8 +208,8 @@ function TowerMesh({
   const glassMat = useMemo(() => {
     if (highlighted) {
       return new THREE.MeshPhysicalMaterial({
-        color: '#c9a96e', metalness: 0.85, roughness: 0.22,
-        emissive: '#c9a96e', emissiveIntensity: 0.45,
+        color: '#1ba3b8', metalness: 0.85, roughness: 0.22,
+        emissive: '#1ba3b8', emissiveIntensity: 0.45,
         clearcoat: 0.5,
       });
     }
@@ -288,7 +288,7 @@ function TowerMesh({
               color="#f4f4f4"
               metalness={0.05}
               roughness={0.4}
-              emissive={highlighted ? '#c9a96e' : '#fff2a0'}
+              emissive={highlighted ? '#1ba3b8' : '#fff2a0'}
               emissiveIntensity={highlighted ? 0.35 : 0.04 + nightBoost * 0.4}
             />
           </mesh>
@@ -302,7 +302,7 @@ function TowerMesh({
       {highlighted && (
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0]}>
           <ringGeometry args={[0.9, 1.2, 32]} />
-          <meshBasicMaterial color="#c9a96e" transparent opacity={0.45} side={THREE.DoubleSide} />
+          <meshBasicMaterial color="#1ba3b8" transparent opacity={0.45} side={THREE.DoubleSide} />
         </mesh>
       )}
     </group>
@@ -434,7 +434,7 @@ export default function DubaiScene({
 
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.03, -12]}>
           <ringGeometry args={[0.18, 0.22, 24]} />
-          <meshBasicMaterial color="#c9a96e" transparent opacity={0.6} />
+          <meshBasicMaterial color="#1ba3b8" transparent opacity={0.6} />
         </mesh>
       </group>
     </>

@@ -25,7 +25,7 @@ const RADIUS = 4.2;
 const ARM_TIGHTNESS = 0.85;
 
 const CORE   = new THREE.Color('#fff2a0');
-const MID    = new THREE.Color('#c9a96e');
+const MID    = new THREE.Color('#1ba3b8');
 const RIM    = new THREE.Color('#64dfdf');
 const ACCENT = new THREE.Color('#b8a4e8');
 
@@ -143,7 +143,7 @@ export default function GalaxyScene({ mouse }: { mouse: { x: number; y: number }
       </mesh>
       <mesh>
         <sphereGeometry args={[1.0, 32, 32]} />
-        <meshBasicMaterial color="#c9a96e" transparent opacity={0.18} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial color="#1ba3b8" transparent opacity={0.18} blending={THREE.AdditiveBlending} />
       </mesh>
     </>
   );

@@ -51,13 +51,13 @@ interface Link {
 
 // ─── palette ───────────────────────────────────────────────────────────────
 
-const GOLD = '#c9a96e';
-const GOLD_DIM = 'rgba(201,169,110,0.32)';
-const SURFACE = '#0a0a0a';
+const GOLD = '#1ba3b8';
+const GOLD_DIM = 'rgba(27, 163, 184,0.32)';
+const SURFACE = '#0a0e14';
 
 // 25 community colors — gold-leaning gradient with cool accents
 const COMMUNITY_PALETTE = [
-  '#c9a96e', '#e8d5b0', '#b8a4e8', '#64dfdf', '#7fd9a3',
+  '#1ba3b8', '#67e8f9', '#b8a4e8', '#64dfdf', '#7fd9a3',
   '#ff7eb3', '#7faad4', '#d9a26f', '#e07060', '#d4d4ff',
   '#a890e0', '#76c7c0', '#f0bb78', '#9aa5d4', '#c4b5fd',
   '#fbbf24', '#86efac', '#fda4af', '#a5b4fc', '#fcd34d',
@@ -399,7 +399,7 @@ export default function ObsidianGraph() {
         </div>
         <h2
           className="text-3xl md:text-5xl font-light leading-tight"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           The codebase as an <em className="italic" style={{ color: GOLD }}>Obsidian network</em>
         </h2>
@@ -420,7 +420,7 @@ export default function ObsidianGraph() {
           className="relative border overflow-hidden"
           style={{
             borderColor: 'rgba(255,255,255,0.08)',
-            background: 'radial-gradient(circle at 30% 20%, rgba(201,169,110,0.04), transparent 50%), #07070b',
+            background: 'radial-gradient(circle at 30% 20%, rgba(27, 163, 184,0.04), transparent 50%), #07070b',
             height: '620px',
           }}
         >
@@ -444,7 +444,7 @@ export default function ObsidianGraph() {
                 onClick={() => { setSelected(null); setQuery(''); }}
                 data-hover="true"
                 className="px-2.5 py-1.5 text-[10px] uppercase tracking-[0.18em] border"
-                style={{ fontFamily: 'var(--font-mono)', borderColor: 'rgba(201,169,110,0.4)', color: GOLD }}
+                style={{ fontFamily: 'var(--font-mono)', borderColor: 'rgba(27, 163, 184,0.4)', color: GOLD }}
               >
                 clear
               </button>
@@ -523,7 +523,7 @@ export default function ObsidianGraph() {
                 </div>
                 <div
                   className="text-lg break-words"
-                  style={{ fontFamily: 'var(--font-playfair)', color: GOLD }}
+                  style={{ fontFamily: 'var(--font-inter)', color: GOLD }}
                 >
                   {selected.label}
                 </div>

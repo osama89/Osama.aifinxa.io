@@ -19,7 +19,7 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-6 text-center"
+        className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-6 text-center"
         style={{ fontFamily: 'var(--font-inter)' }}
       >
         Get In Touch
@@ -30,10 +30,10 @@ export default function Contact() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.1 }}
         className="text-5xl md:text-6xl font-black text-center mb-4"
-        style={{ fontFamily: 'var(--font-playfair)' }}
+        style={{ fontFamily: 'var(--font-inter)' }}
       >
         Let&apos;s Create<br />
-        <span className="text-[#c9a96e]">Together</span>
+        <span className="text-[#1ba3b8]">Together</span>
       </motion.h2>
 
       {/* Contact details */}
@@ -53,7 +53,7 @@ export default function Contact() {
               {label}
             </p>
             {href ? (
-              <a href={href} className="text-white/70 text-sm hover:text-[#c9a96e] transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
+              <a href={href} className="text-white/70 text-sm hover:text-[#1ba3b8] transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
                 {value}
               </a>
             ) : (
@@ -80,7 +80,7 @@ export default function Contact() {
               type="text"
               required
               placeholder="Your name"
-              className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#c9a96e] transition-colors duration-300"
+              className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#1ba3b8] transition-colors duration-300"
               style={{ fontFamily: 'var(--font-inter)', fontWeight: 300 }}
             />
           </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               type="email"
               required
               placeholder="your@email.com"
-              className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#c9a96e] transition-colors duration-300"
+              className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#1ba3b8] transition-colors duration-300"
               style={{ fontFamily: 'var(--font-inter)', fontWeight: 300 }}
             />
           </div>
@@ -108,7 +108,7 @@ export default function Contact() {
             required
             rows={4}
             placeholder="Tell me about your project..."
-            className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#c9a96e] transition-colors duration-300 resize-none"
+            className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/20 outline-none focus:border-[#1ba3b8] transition-colors duration-300 resize-none"
             style={{ fontFamily: 'var(--font-inter)', fontWeight: 300 }}
           />
         </div>
@@ -117,18 +117,18 @@ export default function Contact() {
           {!sent ? (
             <button
               type="submit"
-              className="relative group px-12 py-4 border border-[#c9a96e] text-[#c9a96e] text-sm tracking-[0.3em] uppercase overflow-hidden hover:text-black transition-colors duration-500"
+              className="relative group px-12 py-4 border border-[#1ba3b8] text-[#1ba3b8] text-sm tracking-[0.3em] uppercase overflow-hidden hover:text-black transition-colors duration-500"
               style={{ fontFamily: 'var(--font-inter)' }}
               data-hover="true"
             >
-              <span className="absolute inset-0 bg-[#c9a96e] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+              <span className="absolute inset-0 bg-[#1ba3b8] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
               <span className="relative">Send Message</span>
             </button>
           ) : (
             <motion.p
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-[#c9a96e] text-sm tracking-widest uppercase"
+              className="text-[#1ba3b8] text-sm tracking-widest uppercase"
               style={{ fontFamily: 'var(--font-inter)' }}
             >
               Message sent. I&apos;ll be in touch.

@@ -1,36 +1,36 @@
 ---
 version: alpha
-name: Osama Portfolio — Heritage Gold
-description: A premium-matte, editorial-noir identity for a personal portfolio. Sharp corners, generous letter-spacing, gold as the only chromatic accent against deep ink.
+name: Osama Portfolio — Blueprint Steel
+description: A dark blueprint-industrial identity for a personal portfolio. Steel-blue surfaces, a teal-to-cyan accent that drives every interaction, amber as the single warm counterweight, and a precision-instrument typographic system in Inter + JetBrains Mono.
 colors:
-  primary: "#c9a96e"
-  secondary: "#e8d5b0"
-  tertiary: "#64dfdf"
-  neutral: "#0a0a0a"
-  surface: "#111111"
-  on-primary: "#0a0a0a"
-  on-neutral: "#ffffff"
-  text-muted: "#a3a3a3"
-  border-faint: "#1f1f1f"
+  primary: "#1ba3b8"
+  secondary: "#67e8f9"
+  tertiary: "#c9960e"
+  neutral: "#0a0e14"
+  surface: "#101820"
+  on-primary: "#06121a"
+  on-neutral: "#e5e9f0"
+  text-muted: "#7a8899"
+  border-faint: "#2a3a4e"
 typography:
   display-xl:
-    fontFamily: Playfair Display
+    fontFamily: Inter
     fontSize: 64px
-    fontWeight: 900
-    lineHeight: 1.05
-    letterSpacing: -0.02em
+    fontWeight: 800
+    lineHeight: 1.04
+    letterSpacing: -0.03em
   display-lg:
-    fontFamily: Playfair Display
+    fontFamily: Inter
     fontSize: 48px
     fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: -0.015em
+    lineHeight: 1.08
+    letterSpacing: -0.025em
   display-md:
-    fontFamily: Playfair Display
+    fontFamily: Inter
     fontSize: 32px
     fontWeight: 700
-    lineHeight: 1.15
-    letterSpacing: -0.01em
+    lineHeight: 1.14
+    letterSpacing: -0.02em
   body-lg:
     fontFamily: Inter
     fontSize: 18px
@@ -66,9 +66,10 @@ typography:
     letterSpacing: 0.32em
 rounded:
   none: 0px
-  sm: 2px
-  md: 4px
-  lg: 8px
+  sm: 6px
+  md: 10px
+  lg: 16px
+  xl: 22px
   full: 9999px
 spacing:
   xs: 4px
@@ -82,7 +83,7 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     typography: "{typography.label-md}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.md}"
     padding: 12px
   button-primary-hover:
     backgroundColor: "{colors.secondary}"
@@ -91,95 +92,97 @@ components:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.primary}"
     typography: "{typography.label-md}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.md}"
     padding: 12px
   button-ghost:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.on-neutral}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.sm}"
     padding: 8px
   card-surface:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.on-neutral}"
     typography: "{typography.body-md}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.lg}"
     padding: 16px
   tab-active:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.sm}"
     padding: 8px
   tab-inactive:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.on-neutral}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.sm}"
     padding: 8px
 ---
 
-# Osama Portfolio — Heritage Gold
+# Osama Portfolio — Blueprint Steel
 
-A DESIGN.md describing the visual identity of `osama.aifinxa.io`. This file is the human- and machine-readable source of truth for the palette, typography, spacing, and component tokens used across the site.
+A DESIGN.md describing the visual identity of `osama.aifinxa.io`. This file is the human- and machine-readable source of truth for the palette, typography, spacing, and component tokens used across the site. The identity is a dark, blueprint-industrial system: steel-blue surfaces under a teal-to-cyan accent, amber as the single warm counterweight, and a precision-instrument typographic voice.
 
 ## Overview
 
-Architectural minimalism meets editorial noir. The UI is built around deep ink, generous negative space, and a single chromatic accent — a warm, museum-catalog gold (`{colors.primary}`) — which is the sole driver of interaction. Everything that is gold is clickable; nothing else is.
+Engineering-blueprint minimalism rendered in deep navy steel. The UI is built around a near-black blue-ink ground (`{colors.neutral}`), faint blueprint grid lines, and a teal-to-cyan accent (`{colors.primary}` rising to `{colors.secondary}`) that drives every piece of interaction. Where the old identity used a single warm gold, this one runs cool: cyan is the system's pulse, amber (`{colors.tertiary}`) is the only warm note and is reserved for status and emphasis.
 
-Type does the heavy lifting. **Playfair Display** carries the narrative — long, slow, serif headlines that feel like a printed broadsheet. **Inter** sits underneath for body copy. **JetBrains Mono** handles every utility surface: tab labels, terminal output, technical metadata, navigation hints. Mono is always uppercase with generous tracking, evoking a precision instrument rather than a sentence.
+Type is a precision instrument, not a broadsheet. **Inter** carries everything — set tight and heavy at display sizes so the headlines read like machined plate, set calm at body sizes for readability. **JetBrains Mono** handles every utility surface: tab labels, terminal output, technical metadata, navigation hints. Mono is always uppercase with generous tracking, evoking an oscilloscope readout rather than a sentence.
 
-Corners are sharp. Borders are hairlines. Motion is restrained — most interaction is a colour swap or a 200ms cross-fade, never a slam. The feel is "precise, expensive, considered" — closer to a Swiss design book than a SaaS dashboard.
+Surfaces lift on hairline steel borders and faint cyan glows. Motion is restrained — a colour swap, a 200ms cross-fade, a slow grid drift — never a slam. The feel is "instrument-grade, technical, expensive" — closer to a control-room console than a SaaS dashboard.
 
 ## Colors
 
-The palette is rooted in high-contrast neutrals and a single accent. There is intentionally no blue, no green chrome — only ink, paper, and gold.
+The palette is rooted in cool steel neutrals with a cyan accent and a single amber counterweight. There is intentionally no gold, no warm chrome on the primary surfaces — only blue-ink, steel, cyan, and a disciplined amber for status.
 
-- **Primary (`#c9a96e`):** Heritage gold. The sole driver of interaction — used for the cursor's hover ring, active tabs, primary buttons, links, callouts. If something is gold, you can click it.
-- **Secondary (`#e8d5b0`):** Champagne. A lighter gold used for hover states, emphasis, secondary highlights. Never used standalone for interaction — always paired with primary as a state variant.
-- **Tertiary (`#64dfdf`):** Lagoon teal. The only non-gold accent, reserved for technical/system surfaces — playground scene highlights, audio cues, debug indicators. Never appears in the main marketing surfaces.
-- **Neutral (`#0a0a0a`):** Deep ink. The dominant background colour across the entire site. Not pure black — a fractional warm bias keeps it from feeling clinical.
-- **Surface (`#111111`):** Card. One step up from neutral, used to lift floating panels, terminal windows, and the playground overlay.
-- **On-primary (`#0a0a0a`):** Text and icons set against a gold background. Always the deep-ink neutral, never pure black.
-- **On-neutral (`#ffffff`):** Default body text against the deep ink background. Pure white is used at 100%; lower hierarchy is expressed as 70%/55%/35%/18% opacity overlays.
+- **Primary (`#1ba3b8`):** Signal teal. The sole driver of interaction — used for the cursor's hover ring, active tabs, primary buttons, links, callouts, borders on focus. If something is teal, you can act on it.
+- **Secondary (`#67e8f9`):** Cyan glow. A brighter cyan used for hover states, emphasis, gradient end-stops, and glow highlights. Always paired with primary as a state variant, never standalone for static UI.
+- **Tertiary (`#c9960e`):** Instrument amber. The only warm accent, reserved for status, live indicators, warnings, and technical counters. The cool/warm tension is deliberate; resist expanding it into general decoration.
+- **Neutral (`#0a0e14`):** Blue-ink. The dominant background across the entire site. Not pure black — a navy-steel bias keeps it reading as a blueprint ground, not a void.
+- **Surface (`#101820`):** Steel panel. One step up from neutral, used to lift floating panels, terminal windows, and the playground overlay.
+- **On-primary (`#06121a`):** Text and icons set against a teal background. A deep blue-ink, never pure black.
+- **On-neutral (`#e5e9f0`):** Default body text against the blue-ink background. Cool off-white, never pure `#fff`; lower hierarchy is expressed as 70%/55%/35%/18% opacity overlays.
+- **Text-muted (`#7a8899`):** Steel-grey for secondary copy, captions, and inactive labels.
+- **Border-faint (`#2a3a4e`):** The canonical hairline for inactive borders, dividers, and the blueprint grid.
 
 ## Typography
 
-Three typefaces, each with a single, well-defined role. There is no general-purpose font — every level has a reason.
+Two typefaces, each with a single, well-defined role. There is no serif — the old Playfair display voice is retired in favour of a tighter, more technical system.
 
-- **Display (Playfair Display, weights 700–900):** Hero headlines, section titles, tower names, exhibition-card titles. Always set tight (`-0.01em` to `-0.02em`) so the serifs lock together. Reserved for content that the reader is *meant* to slow down for.
-- **Body (Inter, weights 300–500):** Paragraphs, descriptions, captions. Set at 1.6 line-height for long-form readability. Inter is the workhorse — never used for headlines, never used for labels.
-- **Labels (JetBrains Mono, weights 400–500):** Tab strips, navigation chrome, terminal output, technical metadata. **Always uppercase, always tracked** (`0.18em`–`0.32em`). The wider the tracking, the smaller the size — `label-xs` at `9px / 0.32em` is the smallest legible mono usage and is reserved for ambient group labels and ◆ markers.
+- **Display (Inter, weights 700–800):** Hero headlines, section titles, card titles. Set tight (`-0.02em` to `-0.03em`) and heavy so the type reads like machined plate. Reserved for content the reader is meant to anchor on.
+- **Body (Inter, weights 300–400):** Paragraphs, descriptions, captions. Set at 1.6 line-height for long-form readability. Body and display share the family but never the weight or tracking.
+- **Labels (JetBrains Mono, weights 400–500):** Tab strips, navigation chrome, terminal output, technical metadata. **Always uppercase, always tracked** (`0.18em`–`0.32em`). The wider the tracking, the smaller the size — `label-xs` at `9px / 0.32em` is the smallest legible mono usage, reserved for ambient group labels and ◆ markers.
 
-Sizes follow a Major Third scale (1.25×) from `9px` mono up to `64px` display. The display sizes are intentionally large — this is a portfolio, not an inbox; the headlines are meant to dominate.
+Sizes follow a Major Third scale (1.25×) from `9px` mono up to `64px` display. Display sizes stay large — this is a portfolio, not an inbox.
 
 ## Layout
 
 Spacing follows an 8-point grid (`{spacing.sm}` = 8px) with two exceptions: `xs` (4px) for hairline gaps inside tab strips, and `2xl` (80px) for breathing room between page sections.
 
-Containers are full-bleed with internal padding rather than constrained max-widths. The site is built section-stack-first — `Loader → Nav → Hero → About → NeuralBrain → ObsidianGraph → Marquee → HorizontalScroll → Contact` — each section owns its own vertical rhythm.
+Containers are full-bleed with internal padding rather than constrained max-widths. The site is built section-stack-first — `Loader → Nav → Hero → About → NeuralBrain → ObsidianGraph → Marquee → HorizontalScroll → Contact` — each section owns its own vertical rhythm. Faint blueprint grid backgrounds and radial cyan fades tie the sections into one console surface.
 
 The custom cursor (`cursor: none` globally; `CustomCursor.tsx` renders the visible ring) is part of the layout system. Interactive elements declare themselves with `data-hover="true"` so the cursor knows to expand on hover.
 
 ## Shapes
 
-Sharp corners are the default — `{rounded.none}`. The optional scale exists for inline pills and the occasional avatar/badge, but the dominant surfaces (cards, buttons, tab strips, terminal chrome) are rectangular with hairline borders. Border colour is almost never solid white — `rgba(255,255,255,0.18)` is the canonical hairline for inactive states; the gold primary takes over on active/focus.
+Soft-but-technical corners — `{rounded.md}` (10px) is the working default for panels and buttons, `{rounded.lg}` (16px) for large cards, `{rounded.sm}` (6px) for pills and chips. Borders are hairlines in `{colors.border-faint}`; the teal primary takes over on active/focus, often with a faint cyan glow ring.
 
 ## Components
 
 The component layer maps semantic UI patterns to token combinations. Each component declares its `backgroundColor`, `textColor`, `typography`, `rounded`, and `padding` by reference, so a token change in the front matter propagates everywhere.
 
-- **`button-primary` / `button-primary-hover`:** Gold button with deep-ink text. The hover variant lightens to champagne. Used for the single primary action on any given screen.
-- **`button-secondary`:** Transparent over deep ink, gold border, gold label. Used alongside `button-primary` when two actions are weighted equally.
-- **`button-ghost`:** No background, no border — just white/70 text with a `data-hover` ring. Used for tertiary navigation (close buttons, "skip" links, inline dismissals).
-- **`card-surface`:** The floating panel pattern — surface background, white text, hairline border, 16px padding. Used inside the playground overlay (paint picker, time control, tower info) and the terminal.
-- **`tab-active` / `tab-inactive`:** The grouped tab strip pattern. Inactive tabs use `label-sm` mono with a faint border; active tabs flip the colours (gold fill, ink text) and gain a `motion.span` shared-layout pill underneath.
+- **`button-primary` / `button-primary-hover`:** Teal button with blue-ink text. The hover variant brightens to cyan glow. Used for the single primary action on any given screen.
+- **`button-secondary`:** Transparent over blue-ink, teal border, teal label. Used alongside `button-primary` when two actions are weighted equally.
+- **`button-ghost`:** No background, no border — just ink/70 text with a `data-hover` ring. Used for tertiary navigation (close buttons, "skip" links, inline dismissals).
+- **`card-surface`:** The floating panel pattern — steel-panel background, ink text, hairline border, 16px padding, soft 16px radius. Used inside the playground overlay and the terminal.
+- **`tab-active` / `tab-inactive`:** The grouped tab strip pattern. Inactive tabs use `label-sm` mono with a faint border; active tabs flip to teal fill with ink text and gain a `motion.span` shared-layout pill underneath.
 
 ## Do's and Don'ts
 
-- **Do** keep gold reserved for interaction. If something is gold and *isn't* clickable, the user has been lied to.
-- **Do** lead with type. The site is text-forward — visuals exist to support the copy, not the other way around.
-- **Do** preserve sharp corners. The brand is editorial, not friendly-rounded.
-- **Don't** introduce new accent colours. The teal `{colors.tertiary}` exists because the playground needed a secondary system colour for technical UI; resist the urge to expand it.
-- **Don't** mix typeface roles. Playfair for narrative, Inter for explanation, Mono for chrome — never the other way around.
+- **Do** keep teal reserved for interaction. If something is teal and *isn't* actionable, the user has been lied to.
+- **Do** let the blueprint ground carry the mood — faint grid lines and radial cyan fades over deep navy steel.
+- **Do** keep amber disciplined: status, live pulses, counters. It is the only warm note.
+- **Don't** reintroduce gold or warm primary surfaces — the identity is cool steel now.
+- **Don't** mix typeface roles. Inter for narrative and explanation, Mono for chrome — never Mono for paragraphs.
 - **Don't** soften the cursor. The `cursor: none` + `CustomCursor.tsx` system is load-bearing for the brand feel; do not revert to native cursors on individual elements.

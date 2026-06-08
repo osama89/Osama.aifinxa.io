@@ -89,9 +89,9 @@ export default function About() {
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         whileHover={{
           boxShadow: [
-            '0 0 0 1px rgba(201,169,110,0.3), 0 0 30px 4px rgba(201,169,110,0.12)',
-            '0 0 0 1px rgba(201,169,110,0.5), 0 0 50px 8px rgba(201,169,110,0.22)',
-            '0 0 0 1px rgba(201,169,110,0.3), 0 0 30px 4px rgba(201,169,110,0.12)',
+            '0 0 0 1px rgba(27, 163, 184,0.3), 0 0 30px 4px rgba(27, 163, 184,0.12)',
+            '0 0 0 1px rgba(27, 163, 184,0.5), 0 0 50px 8px rgba(27, 163, 184,0.22)',
+            '0 0 0 1px rgba(27, 163, 184,0.3), 0 0 30px 4px rgba(27, 163, 184,0.12)',
           ],
           transition: { boxShadow: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' } },
         }}
@@ -157,7 +157,7 @@ export default function About() {
               style={{
                 zIndex: 30,
                 height: '2px',
-                background: 'linear-gradient(90deg, transparent 0%, rgba(201,169,110,0.55) 50%, transparent 100%)',
+                background: 'linear-gradient(90deg, transparent 0%, rgba(27, 163, 184,0.55) 50%, transparent 100%)',
                 animation: 'scan-sweep 3.5s linear infinite',
               }}
             />
@@ -173,8 +173,8 @@ export default function About() {
                   bottom: '86px',
                   width: p.size,
                   height: p.size,
-                  backgroundColor: '#c9a96e',
-                  boxShadow: `0 0 ${p.size * 2}px rgba(201,169,110,0.85)`,
+                  backgroundColor: '#1ba3b8',
+                  boxShadow: `0 0 ${p.size * 2}px rgba(27, 163, 184,0.85)`,
                   animation: `particle-rise ${p.duration} ${p.delay} ease-out infinite`,
                 }}
               />
@@ -185,32 +185,32 @@ export default function About() {
               className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               style={{
                 zIndex: 35,
-                background: 'radial-gradient(ellipse at center, rgba(201,169,110,0.18) 0%, transparent 65%)',
+                background: 'radial-gradient(ellipse at center, rgba(27, 163, 184,0.18) 0%, transparent 65%)',
               }}
             >
               <div className="text-center" style={{ fontFamily: 'var(--font-mono)' }}>
-                <div className="w-12 h-12 mx-auto mb-3 border border-[#c9a96e]/70 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
+                <div className="w-12 h-12 mx-auto mb-3 border border-[#1ba3b8]/70 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1ba3b8" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="3" />
                     <path d="M3 12a9 9 0 0118 0M3 12a9 9 0 0018 0" strokeLinecap="round" />
                   </svg>
                 </div>
-                <p className="text-[#c9a96e] text-[9px] tracking-[0.5em] uppercase">Click · Explore</p>
+                <p className="text-[#1ba3b8] text-[9px] tracking-[0.5em] uppercase">Click · Explore</p>
                 <p className="text-white/50 text-[8px] tracking-[0.4em] uppercase mt-1">Intelligence Mode</p>
               </div>
             </div>
 
             {/* z-40: Corner frames */}
-            <div className="absolute inset-0 border border-[#c9a96e]/20 pointer-events-none" style={{ zIndex: 40 }} />
-            <div className="absolute top-4 left-4 w-10 h-10 border-l-2 border-t-2 border-[#c9a96e]/60 pointer-events-none" style={{ zIndex: 40 }} />
-            <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-[#c9a96e]/60 pointer-events-none" style={{ zIndex: 40 }} />
+            <div className="absolute inset-0 border border-[#1ba3b8]/20 pointer-events-none" style={{ zIndex: 40 }} />
+            <div className="absolute top-4 left-4 w-10 h-10 border-l-2 border-t-2 border-[#1ba3b8]/60 pointer-events-none" style={{ zIndex: 40 }} />
+            <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-[#1ba3b8]/60 pointer-events-none" style={{ zIndex: 40 }} />
 
             {/* z-50: Stats overlay */}
             <div className="absolute bottom-6 left-6 right-6 pointer-events-none" style={{ zIndex: 50 }}>
               <div className="bg-black/80 backdrop-blur-sm border border-white/10 p-5 grid grid-cols-3 gap-3">
                 {[['13+', 'Years'], ['50+', 'Projects'], ['UAE', 'Based']].map(([n, l]) => (
                   <div key={l} className="text-center">
-                    <p className="text-[#c9a96e] text-xl font-black" style={{ fontFamily: 'var(--font-playfair)' }}>{n}</p>
+                    <p className="text-[#1ba3b8] text-xl font-black" style={{ fontFamily: 'var(--font-inter)' }}>{n}</p>
                     <p className="text-white/40 text-[10px] tracking-widest uppercase mt-1" style={{ fontFamily: 'var(--font-inter)' }}>{l}</p>
                   </div>
                 ))}
@@ -226,7 +226,7 @@ export default function About() {
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-6"
+          className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-6"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           About
@@ -240,7 +240,7 @@ export default function About() {
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.9, delay: i * 0.13, ease: [0.22, 1, 0.36, 1] }}
                 className="text-4xl md:text-5xl font-black leading-tight"
-                style={{ fontFamily: 'var(--font-playfair)' }}
+                style={{ fontFamily: 'var(--font-inter)' }}
               >
                 {line}
               </motion.p>
@@ -278,12 +278,12 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.7 + i * 0.1 }}
               className="flex items-start gap-4"
             >
-              <div className="w-[1px] h-full bg-[#c9a96e]/30 mt-2 flex-shrink-0 self-stretch" />
+              <div className="w-[1px] h-full bg-[#1ba3b8]/30 mt-2 flex-shrink-0 self-stretch" />
               <div>
                 <p className="text-white text-sm font-medium" style={{ fontFamily: 'var(--font-inter)' }}>
                   {job.role}
                 </p>
-                <p className="text-[#c9a96e]/70 text-xs mt-0.5" style={{ fontFamily: 'var(--font-inter)' }}>
+                <p className="text-[#1ba3b8]/70 text-xs mt-0.5" style={{ fontFamily: 'var(--font-inter)' }}>
                   {job.company}
                   <span className="text-white/20 ml-2">· {job.period}</span>
                 </p>
@@ -303,13 +303,13 @@ export default function About() {
           data-hover="true"
         >
           <span
-            className="text-sm tracking-[0.3em] uppercase text-[#c9a96e] group-hover:text-white transition-colors duration-300"
+            className="text-sm tracking-[0.3em] uppercase text-[#1ba3b8] group-hover:text-white transition-colors duration-300"
             style={{ fontFamily: 'var(--font-inter)' }}
           >
             LinkedIn Profile
           </span>
-          <span className="w-12 h-[1px] bg-[#c9a96e] group-hover:w-20 transition-all duration-500" />
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
+          <span className="w-12 h-[1px] bg-[#1ba3b8] group-hover:w-20 transition-all duration-500" />
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1ba3b8" strokeWidth="1.5">
             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.a>

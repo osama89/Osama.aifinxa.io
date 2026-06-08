@@ -5,7 +5,7 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const GOLD = new THREE.Color('#c9a96e');
+const GOLD = new THREE.Color('#1ba3b8');
 const CYAN = new THREE.Color('#64dfdf');
 const VIOLET = new THREE.Color('#b8a4e8');
 
@@ -332,7 +332,7 @@ function PhotoCard({ rotation, dragging, isOpen }: CardProps) {
       <mesh position={[0, 0, -0.08]}>
         <planeGeometry args={[PW * 1.25, PH * 1.25]} />
         <meshBasicMaterial
-          color="#c9a96e"
+          color="#1ba3b8"
           transparent
           opacity={0.08}
           blending={THREE.AdditiveBlending}
@@ -393,7 +393,7 @@ function PhotoCard({ rotation, dragging, isOpen }: CardProps) {
       {/* Photo gold border frame */}
       <lineSegments position={[0, 0, 0.005]}>
         <edgesGeometry args={[new THREE.PlaneGeometry(PW, PH)]} />
-        <lineBasicMaterial color="#c9a96e" transparent opacity={0.8} />
+        <lineBasicMaterial color="#1ba3b8" transparent opacity={0.8} />
       </lineSegments>
 
       {/* Inner frame, slightly inset */}
@@ -470,7 +470,7 @@ function PhotoCard({ rotation, dragging, isOpen }: CardProps) {
             <bufferGeometry>
               <bufferAttribute attach="attributes-position" args={[verts, 3]} count={4} />
             </bufferGeometry>
-            <lineBasicMaterial color="#c9a96e" transparent opacity={0.9} />
+            <lineBasicMaterial color="#1ba3b8" transparent opacity={0.9} />
           </lineSegments>
         );
       })}
@@ -647,7 +647,7 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
               dpr={[1, 2]}
             >
               <ambientLight intensity={0.7} />
-              <pointLight position={[2, 2, 3]} intensity={1.2} color="#c9a96e" />
+              <pointLight position={[2, 2, 3]} intensity={1.2} color="#1ba3b8" />
               <pointLight position={[-2, -1, 3]} intensity={0.9} color="#64dfdf" />
               <PhotoCard rotation={rotation} dragging={dragging} isOpen={isOpen} />
               <AmbientField />
@@ -672,7 +672,7 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
             className="absolute top-8 left-1/2 -translate-x-1/2 text-center pointer-events-none"
           >
             <p
-              className="text-[#c9a96e] text-[10px] tracking-[0.6em] uppercase mb-2"
+              className="text-[#1ba3b8] text-[10px] tracking-[0.6em] uppercase mb-2"
               style={{ fontFamily: 'var(--font-inter)' }}
             >
               Intelligence Mode
@@ -680,8 +680,8 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
             <h2
               className="text-3xl md:text-4xl font-black"
               style={{
-                fontFamily: 'var(--font-playfair)',
-                background: 'linear-gradient(180deg, #ffffff 0%, #c9a96e 100%)',
+                fontFamily: 'var(--font-inter)',
+                background: 'linear-gradient(180deg, #ffffff 0%, #1ba3b8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -695,7 +695,7 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
           <button
             onClick={onClose}
             aria-label="Close intelligence mode"
-            className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center border border-[#c9a96e]/40 text-[#c9a96e] hover:bg-[#c9a96e] hover:text-black transition-all duration-300"
+            className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center border border-[#1ba3b8]/40 text-[#1ba3b8] hover:bg-[#1ba3b8] hover:text-black transition-all duration-300"
             style={{ fontFamily: 'var(--font-mono)', backdropFilter: 'blur(6px)' }}
             data-hover="true"
           >
@@ -712,7 +712,7 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
                 className="absolute left-0 top-0 h-full"
                 style={{
                   width: `${zoomProgress * 100}%`,
-                  background: 'linear-gradient(90deg, #c9a96e, #64dfdf)',
+                  background: 'linear-gradient(90deg, #1ba3b8, #64dfdf)',
                   boxShadow: '0 0 10px rgba(100,223,223,0.6)',
                 }}
                 transition={{ duration: 0.3 }}
@@ -731,8 +731,8 @@ export default function PhotoIntelligence({ isOpen, onClose }: Props) {
           </div>
 
           {/* Corner frames */}
-          <div className="absolute top-6 left-6 w-10 h-10 border-l border-t border-[#c9a96e]/40 pointer-events-none" />
-          <div className="absolute bottom-6 left-6 w-10 h-10 border-l border-b border-[#c9a96e]/40 pointer-events-none" />
+          <div className="absolute top-6 left-6 w-10 h-10 border-l border-t border-[#1ba3b8]/40 pointer-events-none" />
+          <div className="absolute bottom-6 left-6 w-10 h-10 border-l border-b border-[#1ba3b8]/40 pointer-events-none" />
           <div className="absolute top-6 right-6 w-10 h-10 border-r border-t border-[#64dfdf]/40 pointer-events-none" />
           <div className="absolute bottom-6 right-6 w-10 h-10 border-r border-b border-[#64dfdf]/40 pointer-events-none" />
         </motion.div>

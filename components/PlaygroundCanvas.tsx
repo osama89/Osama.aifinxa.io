@@ -38,7 +38,7 @@ const PlayCanvasDemo = dynamic(() => import('./playground/PlayCanvasDemo'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center" style={{ background: '#07070b' }}>
-      <div className="text-[10px] tracking-[0.3em] uppercase" style={{ color: '#c9a96e', fontFamily: 'var(--font-mono)' }}>
+      <div className="text-[10px] tracking-[0.3em] uppercase" style={{ color: '#1ba3b8', fontFamily: 'var(--font-mono)' }}>
         loading playcanvas runtime…
       </div>
     </div>
@@ -47,10 +47,10 @@ const PlayCanvasDemo = dynamic(() => import('./playground/PlayCanvasDemo'), {
 
 // ─── palette ───────────────────────────────────────────────────────────────
 
-const GOLD = '#c9a96e';
+const GOLD = '#1ba3b8';
 
 const PAINT_SWATCHES = [
-  '#c9a96e', '#0a0a0a', '#e8d5b0', '#7faad4',
+  '#1ba3b8', '#0a0e14', '#67e8f9', '#7faad4',
   '#a52a2a', '#0d3a5f', '#2a3140', '#c8ccd2',
 ];
 
@@ -298,7 +298,7 @@ export default function PlaygroundCanvas() {
 
   // Vehicle paint state — sticky per vehicle
   const [paint, setPaint] = useState<Record<'car' | 'truck' | 'sedan', string>>({
-    car: '#c9a96e',
+    car: '#1ba3b8',
     truck: '#2a3140',
     sedan: '#c8ccd2',
   });
@@ -440,7 +440,7 @@ export default function PlaygroundCanvas() {
                     aria-label={`Switch to ${d.label} demo: ${d.hint}`}
                     className="relative h-9 min-w-[44px] px-2.5 text-[10px] tracking-[0.16em] border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                     style={{
-                      color: active ? '#0a0a0a' : 'rgba(255,255,255,0.7)',
+                      color: active ? '#0a0e14' : 'rgba(255,255,255,0.7)',
                       background: active ? 'transparent' : 'rgba(10,10,14,0.7)',
                       borderColor: active ? GOLD : 'rgba(255,255,255,0.18)',
                     }}
@@ -505,12 +505,12 @@ export default function PlaygroundCanvas() {
             style={{
               background: 'rgba(8,8,12,0.92)',
               backdropFilter: 'blur(10px)',
-              borderColor: 'rgba(201,169,110,0.4)',
+              borderColor: 'rgba(27, 163, 184,0.4)',
               fontFamily: 'var(--font-mono)',
             }}
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <div className="text-[9px] tracking-[0.3em] uppercase text-[#c9a96e] mb-2">◆ paint</div>
+            <div className="text-[9px] tracking-[0.3em] uppercase text-[#1ba3b8] mb-2">◆ paint</div>
             <div className="grid grid-cols-4 gap-1.5">
               {PAINT_SWATCHES.map((c) => {
                 const vehicle = demo as 'car' | 'truck' | 'sedan';
@@ -547,13 +547,13 @@ export default function PlaygroundCanvas() {
             style={{
               background: 'rgba(8,8,12,0.92)',
               backdropFilter: 'blur(10px)',
-              borderColor: 'rgba(201,169,110,0.4)',
+              borderColor: 'rgba(27, 163, 184,0.4)',
               fontFamily: 'var(--font-mono)',
             }}
             onMouseDown={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-2">
-              <div className="text-[9px] tracking-[0.3em] uppercase text-[#c9a96e]">◆ time</div>
+              <div className="text-[9px] tracking-[0.3em] uppercase text-[#1ba3b8]">◆ time</div>
               <div className="text-[9px] tabular-nums text-white/60">{formatTime(timeOfDay)}</div>
             </div>
             <input
@@ -564,7 +564,7 @@ export default function PlaygroundCanvas() {
               value={timeOfDay}
               onChange={(e) => { setTimeOfDay(parseFloat(e.target.value)); setAutoCycle(false); }}
               aria-label="Time of day"
-              className="w-full accent-[#c9a96e]"
+              className="w-full accent-[#1ba3b8]"
               style={{ accentColor: GOLD }}
             />
             <div className="grid grid-cols-3 gap-1 mt-2">
@@ -594,7 +594,7 @@ export default function PlaygroundCanvas() {
                 style={{
                   borderColor: autoCycle ? GOLD : 'rgba(255,255,255,0.18)',
                   color: autoCycle ? GOLD : 'rgba(255,255,255,0.7)',
-                  background: autoCycle ? 'rgba(201,169,110,0.08)' : 'transparent',
+                  background: autoCycle ? 'rgba(27, 163, 184,0.08)' : 'transparent',
                 }}
               >
                 auto
@@ -615,15 +615,15 @@ export default function PlaygroundCanvas() {
             style={{
               background: 'rgba(8,8,12,0.92)',
               backdropFilter: 'blur(10px)',
-              borderColor: 'rgba(201,169,110,0.4)',
+              borderColor: 'rgba(27, 163, 184,0.4)',
               fontFamily: 'var(--font-mono)',
             }}
             onMouseDown={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-2">
               <div>
-                <div className="text-[9px] tracking-[0.3em] uppercase text-[#c9a96e]">◆ tower</div>
-                <div className="text-white text-sm mt-1" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1ba3b8]">◆ tower</div>
+                <div className="text-white text-sm mt-1" style={{ fontFamily: 'var(--font-inter)' }}>
                   {selected.name}
                 </div>
               </div>
@@ -640,7 +640,7 @@ export default function PlaygroundCanvas() {
             <div className="mt-3 grid grid-cols-2 gap-2 text-[10px]">
               <div>
                 <div className="text-white/35 uppercase tracking-[0.18em]">height</div>
-                <div className="text-[#c9a96e] text-base mt-0.5 tabular-nums">
+                <div className="text-[#1ba3b8] text-base mt-0.5 tabular-nums">
                   <CountUp to={selected.heightM} duration={1.1} />m
                 </div>
               </div>
@@ -669,7 +669,7 @@ export default function PlaygroundCanvas() {
               data-hover="true"
               aria-label={`Replay tone for ${selected.name}`}
               className="mt-3 w-full h-9 border text-[9px] tracking-[0.3em] uppercase"
-              style={{ borderColor: 'rgba(201,169,110,0.5)', color: '#c9a96e' }}
+              style={{ borderColor: 'rgba(27, 163, 184,0.5)', color: '#1ba3b8' }}
             >
               ▶ replay tone
             </button>

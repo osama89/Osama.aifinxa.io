@@ -12,7 +12,7 @@ const CARDS = [
     category: 'Leadership',
     span: 'col-span-1 row-span-2',
     filter: 'none',
-    overlayColor: 'rgba(201,169,110,0.15)',
+    overlayColor: 'rgba(27, 163, 184,0.15)',
     position: 'object-top',
   },
   {
@@ -80,7 +80,7 @@ function GalleryCard({ card, index }: { card: (typeof CARDS)[0]; index: number }
         tiltMaxAngleY={6}
         glareEnable
         glareMaxOpacity={0.1}
-        glareColor="#c9a96e"
+        glareColor="#1ba3b8"
         glarePosition="all"
         scale={1.02}
         transitionSpeed={900}
@@ -124,22 +124,22 @@ function GalleryCard({ card, index }: { card: (typeof CARDS)[0]; index: number }
           />
 
           {/* Film frame corners */}
-          <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-[#c9a96e]/50 pointer-events-none" />
-          <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-[#c9a96e]/50 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-[#c9a96e]/50 pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-[#c9a96e]/50 pointer-events-none" />
+          <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-[#1ba3b8]/50 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-[#1ba3b8]/50 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-[#1ba3b8]/50 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-[#1ba3b8]/50 pointer-events-none" />
 
           {/* Hover info overlay */}
           <div className="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-start justify-end p-5">
             <p
-              className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase mb-1"
+              className="text-[#1ba3b8] text-[10px] tracking-[0.4em] uppercase mb-1"
               style={{ fontFamily: 'var(--font-inter)' }}
             >
               {card.category}
             </p>
             <h3
               className="text-white text-xl font-bold"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-inter)' }}
             >
               {card.title}
             </h3>
@@ -156,7 +156,7 @@ function GalleryCard({ card, index }: { card: (typeof CARDS)[0]; index: number }
           {/* Light leak */}
           <div
             className="absolute -top-16 -right-16 w-32 h-32 rounded-full opacity-[0.07] pointer-events-none"
-            style={{ background: 'radial-gradient(circle, #c9a96e, transparent)' }}
+            style={{ background: 'radial-gradient(circle, #1ba3b8, transparent)' }}
           />
         </div>
       </Tilt>
@@ -175,7 +175,7 @@ export default function Gallery() {
           initial={{ opacity: 0, x: -30 }}
           animate={isTitleInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-4"
+          className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-4"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           Gallery
@@ -185,16 +185,16 @@ export default function Gallery() {
           animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-5xl md:text-6xl font-black"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           Through the<br />
-          <span className="text-[#c9a96e]">Lens</span>
+          <span className="text-[#1ba3b8]">Lens</span>
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}
           animate={isTitleInView ? { scaleX: 1 } : {}}
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 h-[1px] w-24 bg-[#c9a96e] origin-left"
+          className="mt-6 h-[1px] w-24 bg-[#1ba3b8] origin-left"
         />
       </div>
 

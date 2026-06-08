@@ -17,10 +17,10 @@ const ITEMS = [
 
 export default function Marquee() {
   return (
-    <div className="relative overflow-hidden border-y border-white/5 py-5 bg-[#0a0a0a]">
+    <div className="relative overflow-hidden border-y border-white/5 py-5 bg-[#0a0e14]">
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0e14] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0e14] to-transparent z-10 pointer-events-none" />
 
       <div
         className="flex gap-12 whitespace-nowrap"
@@ -34,7 +34,7 @@ export default function Marquee() {
             >
               {item}
             </span>
-            <span className="text-[#c9a96e] text-[6px]">◆</span>
+            <span className="text-[#1ba3b8] text-[6px]">◆</span>
           </span>
         ))}
       </div>

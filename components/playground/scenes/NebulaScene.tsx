@@ -45,7 +45,7 @@ function curl(out: THREE.Vector3, x: number, y: number, z: number, t: number) {
   ).multiplyScalar(1 / (2 * EPS));
 }
 
-const GOLD   = new THREE.Color('#c9a96e');
+const GOLD   = new THREE.Color('#1ba3b8');
 const CYAN   = new THREE.Color('#64dfdf');
 const VIOLET = new THREE.Color('#b8a4e8');
 

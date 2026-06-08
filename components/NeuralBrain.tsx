@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 
-const GOLD = new THREE.Color('#c9a96e');
+const GOLD = new THREE.Color('#1ba3b8');
 const CYAN = new THREE.Color('#64dfdf');
 const VIOLET = new THREE.Color('#b8a4e8');
 const PINK = new THREE.Color('#ff7eb3');   // output signals
@@ -28,7 +28,7 @@ interface CogState {
 const COG_STATES: CogState[] = [
   { id: 'SCANNING',   color: CYAN,   accent: GREEN,  label: 'Sensing patterns',     tempo: 1.0, hue: '#64dfdf' },
   { id: 'PROCESSING', color: VIOLET, accent: CYAN,   label: 'Computing inference',  tempo: 1.4, hue: '#b8a4e8' },
-  { id: 'LEARNING',   color: GOLD,   accent: VIOLET, label: 'Strengthening memory', tempo: 0.85, hue: '#c9a96e' },
+  { id: 'LEARNING',   color: GOLD,   accent: VIOLET, label: 'Strengthening memory', tempo: 0.85, hue: '#1ba3b8' },
   { id: 'DECIDING',   color: PINK,   accent: GOLD,   label: 'Forming decision',     tempo: 1.6, hue: '#ff7eb3' },
   { id: 'PREDICTING', color: GREEN,  accent: PINK,   label: 'Forecasting outcome',  tempo: 1.25, hue: '#7fd9a3' },
 ];
@@ -177,7 +177,7 @@ function BrainHemispheres({ shared }: { shared: SharedRefs }) {
         />
       </mesh>
       <mesh geometry={leftGeo} position={[-0.18, 0, 0]}>
-        <meshBasicMaterial ref={goldWire} color="#c9a96e" wireframe transparent opacity={0.08} />
+        <meshBasicMaterial ref={goldWire} color="#1ba3b8" wireframe transparent opacity={0.08} />
       </mesh>
       <mesh geometry={rightGeo} position={[0.18, 0, 0]}>
         <meshBasicMaterial ref={cyanWire} color="#64dfdf" wireframe transparent opacity={0.08} />
@@ -226,7 +226,7 @@ function FresnelShell({ shared, geometry, position }: {
   const matRef = useRef<THREE.ShaderMaterial>(null!);
   const uniforms = useMemo(
     () => ({
-      uColor: { value: new THREE.Color('#c9a96e') },
+      uColor: { value: new THREE.Color('#1ba3b8') },
       uAccent: { value: new THREE.Color('#64dfdf') },
       uIntensity: { value: 1.8 },
       uPower: { value: 2.6 },
@@ -591,7 +591,7 @@ function CognitiveCore({ shared }: { shared: SharedRefs }) {
       {/* Soft halo */}
       <mesh>
         <sphereGeometry args={[0.45, 32, 32]} />
-        <meshBasicMaterial color="#c9a96e" transparent opacity={0.08} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#1ba3b8" transparent opacity={0.08} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
       <mesh>
         <sphereGeometry args={[0.28, 24, 24]} />
@@ -600,7 +600,7 @@ function CognitiveCore({ shared }: { shared: SharedRefs }) {
       {/* Crystalline core */}
       <mesh ref={ref}>
         <icosahedronGeometry args={[0.18, 0]} />
-        <meshBasicMaterial ref={matRef} color="#c9a96e" wireframe transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial ref={matRef} color="#1ba3b8" wireframe transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
     </group>
   );
@@ -1002,7 +1002,7 @@ function OutputBeams({ shared, surfaceNeurons }: { shared: SharedRefs; surfaceNe
                 kind: 'out',
                 label: 'RESPONSE',
                 source: `→ ${SAT_META[b.targetSat].name}`,
-                color: '#c9a96e',
+                color: '#1ba3b8',
               });
             }
           }
@@ -1084,7 +1084,7 @@ function OrbitRings() {
     <group>
       <mesh ref={r1} rotation={[Math.PI / 2.2, 0, 0]}>
         <torusGeometry args={[2.1, 0.004, 8, 128]} />
-        <meshBasicMaterial color="#c9a96e" transparent opacity={0.35} />
+        <meshBasicMaterial color="#1ba3b8" transparent opacity={0.35} />
       </mesh>
       <mesh ref={r2} rotation={[0, 0, Math.PI / 3]}>
         <torusGeometry args={[2.35, 0.003, 8, 128]} />
@@ -1334,7 +1334,7 @@ export default function NeuralBrain() {
       {/* Top heading */}
       <div className="absolute top-12 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
         <p
-          className="text-[#c9a96e] text-[11px] tracking-[0.6em] uppercase mb-3"
+          className="text-[#1ba3b8] text-[11px] tracking-[0.6em] uppercase mb-3"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           The Mind Behind the Machine
@@ -1342,8 +1342,8 @@ export default function NeuralBrain() {
         <h2
           className="text-4xl md:text-6xl font-black leading-none"
           style={{
-            fontFamily: 'var(--font-playfair)',
-            background: 'linear-gradient(180deg, #ffffff 0%, #c9a96e 100%)',
+            fontFamily: 'var(--font-inter)',
+            background: 'linear-gradient(180deg, #ffffff 0%, #1ba3b8 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -1368,7 +1368,7 @@ export default function NeuralBrain() {
           frameloop={visible ? 'always' : 'demand'}
         >
           <ambientLight intensity={0.45} />
-          <pointLight position={[3, 2, 4]} intensity={1.4} color="#c9a96e" />
+          <pointLight position={[3, 2, 4]} intensity={1.4} color="#1ba3b8" />
           <pointLight position={[-3, -1, 2]} intensity={1.1} color="#64dfdf" />
           <pointLight position={[0, 3, -2]} intensity={0.6} color="#b8a4e8" />
           <BrainScene shared={sharedRef.current} onSelectSat={handleSelectSat} />
@@ -1408,7 +1408,7 @@ export default function NeuralBrain() {
           style={{
             color: current.hue,
             textShadow: `0 0 18px ${current.hue}66`,
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-inter)',
           }}
         >
           {current.id}
@@ -1441,21 +1441,21 @@ export default function NeuralBrain() {
         <div className="space-y-2">
           <div className="flex items-center justify-end gap-3">
             <span className="text-white/35 text-[9px] tracking-[0.25em] uppercase">Input</span>
-            <span className="text-[#7fd9a3] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-playfair)', textShadow: '0 0 10px rgba(127,217,163,0.5)' }}>
+            <span className="text-[#7fd9a3] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-inter)', textShadow: '0 0 10px rgba(127,217,163,0.5)' }}>
               {metrics.input.toString().padStart(4, '0')}
             </span>
             <div className="w-2 h-2 rounded-full bg-[#7fd9a3]" style={{ boxShadow: '0 0 8px #7fd9a3' }} />
           </div>
           <div className="flex items-center justify-end gap-3">
             <span className="text-white/35 text-[9px] tracking-[0.25em] uppercase">Output</span>
-            <span className="text-[#ff7eb3] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-playfair)', textShadow: '0 0 10px rgba(255,126,179,0.5)' }}>
+            <span className="text-[#ff7eb3] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-inter)', textShadow: '0 0 10px rgba(255,126,179,0.5)' }}>
               {metrics.output.toString().padStart(4, '0')}
             </span>
             <div className="w-2 h-2 rounded-full bg-[#ff7eb3]" style={{ boxShadow: '0 0 8px #ff7eb3' }} />
           </div>
           <div className="flex items-center justify-end gap-3">
             <span className="text-white/35 text-[9px] tracking-[0.25em] uppercase">Sync</span>
-            <span className="text-[#64dfdf] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-playfair)', textShadow: '0 0 10px rgba(100,223,223,0.5)' }}>
+            <span className="text-[#64dfdf] text-lg font-black tabular-nums" style={{ fontFamily: 'var(--font-inter)', textShadow: '0 0 10px rgba(100,223,223,0.5)' }}>
               {metrics.sync.toString().padStart(4, '0')}
             </span>
             <div className="w-2 h-2 rounded-full bg-[#64dfdf]" style={{ boxShadow: '0 0 8px #64dfdf' }} />
@@ -1498,7 +1498,7 @@ export default function NeuralBrain() {
         {[
           ['#7fd9a3', 'Input · External feeds'],
           ['#ff7eb3', 'Output · Decisions'],
-          ['#c9a96e', 'Memory · Hebbian'],
+          ['#1ba3b8', 'Memory · Hebbian'],
           ['#64dfdf', 'Synapse · Sync'],
           ['#b8a4e8', 'Deep · Inference'],
         ].map(([col, l]) => (
@@ -1544,7 +1544,7 @@ export default function NeuralBrain() {
                 <button
                   onClick={() => handleSelectSat(null)}
                   aria-label="Close"
-                  className="text-white/30 hover:text-[#c9a96e] text-[10px] tracking-widest"
+                  className="text-white/30 hover:text-[#1ba3b8] text-[10px] tracking-widest"
                   data-hover="true"
                 >
                   ESC ×
@@ -1556,7 +1556,7 @@ export default function NeuralBrain() {
               <div className="grid grid-cols-2 gap-4 mb-2">
                 <div>
                   <p className="text-white/25 text-[7.5px] tracking-[0.25em] uppercase">Feed</p>
-                  <p className="text-[#c9a96e] text-[11px] mt-0.5">{meta.feed}</p>
+                  <p className="text-[#1ba3b8] text-[11px] mt-0.5">{meta.feed}</p>
                 </div>
                 <div>
                   <p className="text-white/25 text-[7.5px] tracking-[0.25em] uppercase">Rate</p>
@@ -1572,9 +1572,9 @@ export default function NeuralBrain() {
       </div>
 
       {/* Corner frames */}
-      <div className="absolute top-6 left-6 w-12 h-12 border-l border-t border-[#c9a96e]/30 pointer-events-none z-10" />
+      <div className="absolute top-6 left-6 w-12 h-12 border-l border-t border-[#1ba3b8]/30 pointer-events-none z-10" />
       <div className="absolute top-6 right-6 w-12 h-12 border-r border-t border-[#64dfdf]/30 pointer-events-none z-10" />
-      <div className="absolute bottom-6 left-6 w-12 h-12 border-l border-b border-[#c9a96e]/30 pointer-events-none z-10" />
+      <div className="absolute bottom-6 left-6 w-12 h-12 border-l border-b border-[#1ba3b8]/30 pointer-events-none z-10" />
       <div className="absolute bottom-6 right-6 w-12 h-12 border-r border-b border-[#64dfdf]/30 pointer-events-none z-10" />
 
       {/* Bottom hint */}

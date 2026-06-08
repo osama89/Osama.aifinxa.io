@@ -38,7 +38,7 @@ export default function Nav({ onTerminalOpen, terminalOpen, onPlaygroundOpen, pl
     >
       <a
         href="#"
-        className="text-[#c9a96e] text-sm tracking-[0.4em] uppercase font-light"
+        className="text-[#1ba3b8] text-sm tracking-[0.4em] uppercase font-light"
         style={{ fontFamily: 'var(--font-inter)' }}
         data-hover="true"
       >
@@ -55,7 +55,7 @@ export default function Nav({ onTerminalOpen, terminalOpen, onPlaygroundOpen, pl
             data-hover="true"
           >
             {link.label}
-            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#c9a96e] group-hover:w-full transition-all duration-300" />
+            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#1ba3b8] group-hover:w-full transition-all duration-300" />
           </a>
         ))}
 
@@ -69,12 +69,12 @@ export default function Nav({ onTerminalOpen, terminalOpen, onPlaygroundOpen, pl
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
             letterSpacing: '0.12em',
-            color: playgroundOpen ? '#c9a96e' : 'rgba(255,255,255,0.4)',
-            borderColor: playgroundOpen ? 'rgba(201,169,110,0.5)' : 'rgba(255,255,255,0.12)',
+            color: playgroundOpen ? '#1ba3b8' : 'rgba(255,255,255,0.4)',
+            borderColor: playgroundOpen ? 'rgba(27, 163, 184,0.5)' : 'rgba(255,255,255,0.12)',
           }}
         >
           <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <polygon points="5 3 19 12 5 21 5 3" fill={playgroundOpen ? '#c9a96e' : 'none'} />
+            <polygon points="5 3 19 12 5 21 5 3" fill={playgroundOpen ? '#1ba3b8' : 'none'} />
           </svg>
           PLAYGROUND
         </button>
@@ -89,14 +89,14 @@ export default function Nav({ onTerminalOpen, terminalOpen, onPlaygroundOpen, pl
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
             letterSpacing: '0.12em',
-            color: terminalOpen ? '#c9a96e' : 'rgba(255,255,255,0.4)',
-            borderColor: terminalOpen ? 'rgba(201,169,110,0.5)' : 'rgba(255,255,255,0.12)',
+            color: terminalOpen ? '#1ba3b8' : 'rgba(255,255,255,0.4)',
+            borderColor: terminalOpen ? 'rgba(27, 163, 184,0.5)' : 'rgba(255,255,255,0.12)',
           }}
         >
           <span
             className="inline-block w-1.5 h-1.5 rounded-full"
             style={{
-              background: terminalOpen ? '#c9a96e' : 'rgba(255,255,255,0.2)',
+              background: terminalOpen ? '#1ba3b8' : 'rgba(255,255,255,0.2)',
               animation: terminalOpen ? 'blink-cursor 1.5s step-end infinite' : 'none',
             }}
           />

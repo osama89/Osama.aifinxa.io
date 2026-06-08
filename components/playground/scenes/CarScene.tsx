@@ -8,7 +8,7 @@ import SceneCamera from '../lib/scene-camera';
 
 // ─── sports car — procedural low-poly ──────────────────────────────────────
 
-export default function CarScene({ mouse, paintColor = '#c9a96e' }: { mouse: { x: number; y: number }; paintColor?: string }) {
+export default function CarScene({ mouse, paintColor = '#1ba3b8' }: { mouse: { x: number; y: number }; paintColor?: string }) {
   const groupRef = useRef<THREE.Group>(null);
 
   // hover tilt with cursor
@@ -28,7 +28,7 @@ export default function CarScene({ mouse, paintColor = '#c9a96e' }: { mouse: { x
   }), [paintColor]);
 
   const glass = useMemo(() => new THREE.MeshPhysicalMaterial({
-    color: '#0a0a0a',
+    color: '#0a0e14',
     metalness: 0.1,
     roughness: 0.05,
     transmission: 0.55,
@@ -166,7 +166,7 @@ function Nameplate({ text }: { text: string }) {
     const ctx = c.getContext('2d')!;
     ctx.fillStyle = 'rgba(0,0,0,0)'; ctx.fillRect(0, 0, 512, 64);
     ctx.font = '500 22px ui-monospace, JetBrains Mono, monospace';
-    ctx.fillStyle = '#c9a96e';
+    ctx.fillStyle = '#1ba3b8';
     ctx.textAlign = 'center';
     ctx.fillText(text, 256, 38);
     const tex = new THREE.CanvasTexture(c);

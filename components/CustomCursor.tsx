@@ -70,7 +70,7 @@ export default function CustomCursor() {
           width: 8,
           height: 8,
           borderRadius: '50%',
-          backgroundColor: isHovering ? '#c9a96e' : '#ffffff',
+          backgroundColor: isHovering ? '#1ba3b8' : '#ffffff',
           transition: 'background-color 0.2s, transform 0.05s',
           transform: isClicking ? 'scale(0.5)' : 'scale(1)',
         }}
@@ -83,7 +83,7 @@ export default function CustomCursor() {
           width: isHovering ? 64 : 40,
           height: isHovering ? 64 : 40,
           borderRadius: '50%',
-          border: `1px solid ${isHovering ? '#c9a96e' : 'rgba(255,255,255,0.6)'}`,
+          border: `1px solid ${isHovering ? '#1ba3b8' : 'rgba(255,255,255,0.6)'}`,
           transition: 'width 0.3s ease, height 0.3s ease, border-color 0.3s ease',
         }}
       />

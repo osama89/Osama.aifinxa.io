@@ -21,7 +21,7 @@ export default function SedanScene({ mouse, paintColor = '#c8ccd2' }: { mouse: {
     iridescence: 0.25,
   }), [paintColor]);
   const glass = useMemo(() => new THREE.MeshPhysicalMaterial({
-    color: '#0a0a0a', metalness: 0.2, roughness: 0.05,
+    color: '#0a0e14', metalness: 0.2, roughness: 0.05,
     transmission: 0.55, transparent: true, opacity: 0.55,
   }), []);
   const rubber = useMemo(() => new THREE.MeshStandardMaterial({

@@ -15,9 +15,9 @@
 import { useEffect, useRef } from 'react';
 import * as pc from 'playcanvas';
 
-const PALETTE = ['#c9a96e', '#e8d5b0', '#b8a4e8', '#64dfdf', '#7fd9a3', '#ff7eb3', '#7faad4', '#d9a26f', '#fbbf24'];
+const PALETTE = ['#1ba3b8', '#67e8f9', '#b8a4e8', '#64dfdf', '#7fd9a3', '#ff7eb3', '#7faad4', '#d9a26f', '#fbbf24'];
 
-const GOLD = '#c9a96e';
+const GOLD = '#1ba3b8';
 
 export default function PlayCanvasDemo() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

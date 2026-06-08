@@ -53,18 +53,18 @@ function PanelStats() {
       {/* Background number */}
       <span
         className="absolute right-6 bottom-6 text-[22rem] font-black leading-none select-none pointer-events-none"
-        style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(201,169,110,0.04)' }}
+        style={{ fontFamily: 'var(--font-inter)', color: 'rgba(27, 163, 184,0.04)' }}
       >
         01
       </span>
 
-      <p className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
+      <p className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
         Who I Am
       </p>
 
-      <h2 className="text-5xl md:text-7xl font-black leading-none mb-12" style={{ fontFamily: 'var(--font-playfair)' }}>
+      <h2 className="text-5xl md:text-7xl font-black leading-none mb-12" style={{ fontFamily: 'var(--font-inter)' }}>
         13 Years<br />
-        <span className="text-[#c9a96e]">Building.</span>
+        <span className="text-[#1ba3b8]">Building.</span>
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
@@ -75,7 +75,7 @@ function PanelStats() {
           { value: '3', label: 'Companies', sub: 'Fully Automated' },
         ].map(({ value, label, sub }) => (
           <div key={label} className="border-t border-white/10 pt-4">
-            <p className="text-4xl md:text-5xl font-black text-[#c9a96e] mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <p className="text-4xl md:text-5xl font-black text-[#1ba3b8] mb-2" style={{ fontFamily: 'var(--font-inter)' }}>
               {value}
             </p>
             <p className="text-white/70 text-xs font-medium tracking-wide" style={{ fontFamily: 'var(--font-inter)' }}>
@@ -96,25 +96,25 @@ function PanelAI() {
     <div className="w-screen h-full flex-shrink-0 flex flex-col justify-center px-12 md:px-24 border-r border-white/5 relative overflow-hidden">
       <span
         className="absolute right-6 bottom-6 text-[22rem] font-black leading-none select-none pointer-events-none"
-        style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(201,169,110,0.04)' }}
+        style={{ fontFamily: 'var(--font-inter)', color: 'rgba(27, 163, 184,0.04)' }}
       >
         02
       </span>
 
-      <p className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
+      <p className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
         Technical Stack
       </p>
 
-      <h2 className="text-5xl md:text-7xl font-black leading-none mb-12" style={{ fontFamily: 'var(--font-playfair)' }}>
+      <h2 className="text-5xl md:text-7xl font-black leading-none mb-12" style={{ fontFamily: 'var(--font-inter)' }}>
         AI &amp;<br />
-        <span className="text-[#c9a96e]">Automation.</span>
+        <span className="text-[#1ba3b8]">Automation.</span>
       </h2>
 
       <div className="flex flex-wrap gap-3 max-w-2xl">
         {AI_SKILLS.map((skill) => (
           <span
             key={skill}
-            className="px-4 py-2 border border-white/10 text-white/60 text-sm hover:border-[#c9a96e]/50 hover:text-white transition-all duration-300"
+            className="px-4 py-2 border border-white/10 text-white/60 text-sm hover:border-[#1ba3b8]/50 hover:text-white transition-all duration-300"
             style={{ fontFamily: 'var(--font-inter)' }}
           >
             {skill}
@@ -130,40 +130,40 @@ function PanelBI() {
     <div className="w-screen h-full flex-shrink-0 flex flex-col justify-center px-12 md:px-24 border-r border-white/5 relative overflow-hidden">
       <span
         className="absolute right-6 bottom-6 text-[22rem] font-black leading-none select-none pointer-events-none"
-        style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(201,169,110,0.04)' }}
+        style={{ fontFamily: 'var(--font-inter)', color: 'rgba(27, 163, 184,0.04)' }}
       >
         03
       </span>
 
-      <p className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
+      <p className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
         Data & Platform
       </p>
 
-      <h2 className="text-5xl md:text-7xl font-black leading-none mb-10" style={{ fontFamily: 'var(--font-playfair)' }}>
+      <h2 className="text-5xl md:text-7xl font-black leading-none mb-10" style={{ fontFamily: 'var(--font-inter)' }}>
         BI &amp;<br />
-        <span className="text-[#c9a96e]">Intelligence.</span>
+        <span className="text-[#1ba3b8]">Intelligence.</span>
       </h2>
 
       <div className="grid grid-cols-2 gap-10 max-w-2xl">
         <div>
-          <p className="text-[#c9a96e]/60 text-[10px] tracking-[0.4em] uppercase mb-4 pb-2 border-b border-[#c9a96e]/20" style={{ fontFamily: 'var(--font-inter)' }}>
+          <p className="text-[#1ba3b8]/60 text-[10px] tracking-[0.4em] uppercase mb-4 pb-2 border-b border-[#1ba3b8]/20" style={{ fontFamily: 'var(--font-inter)' }}>
             BI &amp; Data
           </p>
           <div className="flex flex-wrap gap-2">
             {BI_SKILLS.map(s => (
-              <span key={s} className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#c9a96e]/40 hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
+              <span key={s} className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#1ba3b8]/40 hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
                 {s}
               </span>
             ))}
           </div>
         </div>
         <div>
-          <p className="text-[#c9a96e]/60 text-[10px] tracking-[0.4em] uppercase mb-4 pb-2 border-b border-[#c9a96e]/20" style={{ fontFamily: 'var(--font-inter)' }}>
+          <p className="text-[#1ba3b8]/60 text-[10px] tracking-[0.4em] uppercase mb-4 pb-2 border-b border-[#1ba3b8]/20" style={{ fontFamily: 'var(--font-inter)' }}>
             Dev &amp; Platform
           </p>
           <div className="flex flex-wrap gap-2">
             {DEV_SKILLS.map(s => (
-              <span key={s} className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#c9a96e]/40 hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
+              <span key={s} className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#1ba3b8]/40 hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
                 {s}
               </span>
             ))}
@@ -179,36 +179,36 @@ function PanelBuilds() {
     <div className="w-screen h-full flex-shrink-0 flex flex-col justify-center px-12 md:px-24 relative overflow-hidden">
       <span
         className="absolute right-6 bottom-6 text-[22rem] font-black leading-none select-none pointer-events-none"
-        style={{ fontFamily: 'var(--font-playfair)', color: 'rgba(201,169,110,0.04)' }}
+        style={{ fontFamily: 'var(--font-inter)', color: 'rgba(27, 163, 184,0.04)' }}
       >
         04
       </span>
 
-      <p className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
+      <p className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
         Notable Projects
       </p>
 
-      <h2 className="text-5xl md:text-6xl font-black leading-none mb-10" style={{ fontFamily: 'var(--font-playfair)' }}>
+      <h2 className="text-5xl md:text-6xl font-black leading-none mb-10" style={{ fontFamily: 'var(--font-inter)' }}>
         Things I&apos;ve<br />
-        <span className="text-[#c9a96e]">Shipped.</span>
+        <span className="text-[#1ba3b8]">Shipped.</span>
       </h2>
 
       <div className="grid grid-cols-2 gap-px bg-white/5 max-w-3xl">
         {BUILDS.map((item) => (
           <div
             key={item.title}
-            className="bg-[#0a0a0a] p-6 hover:bg-[#111] transition-colors duration-300 group"
+            className="bg-[#0a0e14] p-6 hover:bg-[#101820] transition-colors duration-300 group"
           >
-            <p className="text-[#c9a96e]/60 text-[9px] tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-inter)' }}>
+            <p className="text-[#1ba3b8]/60 text-[9px] tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-inter)' }}>
               {item.tag}
             </p>
-            <h3 className="text-white text-lg font-black mb-2 group-hover:text-[#c9a96e] transition-colors duration-300" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h3 className="text-white text-lg font-black mb-2 group-hover:text-[#1ba3b8] transition-colors duration-300" style={{ fontFamily: 'var(--font-inter)' }}>
               {item.title}
             </h3>
             <p className="text-white/40 text-xs leading-relaxed" style={{ fontFamily: 'var(--font-inter)', fontWeight: 300 }}>
               {item.desc}
             </p>
-            <div className="mt-4 w-6 h-[1px] bg-[#c9a96e]/30 group-hover:w-12 transition-all duration-500" />
+            <div className="mt-4 w-6 h-[1px] bg-[#1ba3b8]/30 group-hover:w-12 transition-all duration-500" />
           </div>
         ))}
       </div>
@@ -236,7 +236,7 @@ export default function HorizontalScroll() {
       <div className="sticky top-0 z-50 h-[2px] bg-white/5">
         <motion.div
           style={{ width: progressWidth }}
-          className="h-full bg-[#c9a96e]"
+          className="h-full bg-[#1ba3b8]"
         />
       </div>
 

@@ -173,7 +173,7 @@ function PreviewMockup() {
         ].map((c) => (
           <article
             key={c.title}
-            className="p-4 border transition-colors hover:border-[#c9a96e]"
+            className="p-4 border transition-colors hover:border-[#1ba3b8]"
             style={{ background: tokens.colors.surface, borderColor: tokens.colors.borderFaint }}
           >
             <div style={{ ...tokens.type.labelXs, color: tokens.colors.primary }}>◆ {c.tag}</div>
@@ -300,10 +300,10 @@ function SpecPanel() {
 version: alpha
 name: Osama Portfolio — Heritage Gold
 colors:
-  primary:   "#c9a96e"   # interaction
-  secondary: "#e8d5b0"   # hover / emphasis
+  primary:   "#1ba3b8"   # interaction
+  secondary: "#67e8f9"   # hover / emphasis
   tertiary:  "#64dfdf"   # technical UI
-  neutral:   "#0a0a0a"   # page background
+  neutral:   "#0a0e14"   # page background
 typography:
   display-xl: Playfair 900 · 64px
   body-md:    Inter 400 · 16px

@@ -236,7 +236,7 @@ export default function PlaygroundWindow({ isOpen, onClose }: PlaygroundWindowPr
                     fontFamily: 'var(--font-mono)',
                     fontSize: '10px',
                     lineHeight: 1,
-                    color: 'var(--design-color-primary, #c9a96e)',
+                    color: 'var(--design-color-primary, #1ba3b8)',
                     opacity: resizing ? 1 : 0.55,
                     transition: 'opacity 140ms',
                   }}

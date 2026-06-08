@@ -65,5 +65,8 @@ WhatsApp Video 2026-05-10 at 18.50.35.mp4
 /app/design-tokens.generated.css
 /components/playground/scenes/design-tokens.generated.ts
 
+# Vendored design skill — reproducible via skills-lock.json (source: pbakaus/impeccable).
+/.agents/
+
 # Stray PAI memory junk — created when a shell didn't expand ${HOME}.
 ${HOME}/

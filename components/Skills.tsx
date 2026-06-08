@@ -39,7 +39,7 @@ export default function Skills() {
           initial={{ opacity: 0 }}
           animate={isTitleInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-4"
+          className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-4"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           Technical Stack
@@ -49,10 +49,10 @@ export default function Skills() {
           animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-5xl md:text-6xl font-black mb-12"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           What I<br />
-          <span className="text-[#c9a96e]">Build With</span>
+          <span className="text-[#1ba3b8]">Build With</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -64,7 +64,7 @@ export default function Skills() {
               transition={{ duration: 0.7, delay: 0.2 + gi * 0.1 }}
             >
               <p
-                className="text-[#c9a96e] text-xs tracking-[0.4em] uppercase mb-5 pb-3 border-b border-[#c9a96e]/20"
+                className="text-[#1ba3b8] text-xs tracking-[0.4em] uppercase mb-5 pb-3 border-b border-[#1ba3b8]/20"
                 style={{ fontFamily: 'var(--font-inter)' }}
               >
                 {group.label}
@@ -73,7 +73,7 @@ export default function Skills() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#c9a96e]/40 hover:text-white transition-colors duration-300"
+                    className="px-3 py-1.5 border border-white/10 text-white/60 text-xs hover:border-[#1ba3b8]/40 hover:text-white transition-colors duration-300"
                     style={{ fontFamily: 'var(--font-inter)' }}
                   >
                     {skill}
@@ -91,7 +91,7 @@ export default function Skills() {
           initial={{ opacity: 0 }}
           animate={isBuildsInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-[#c9a96e] text-xs tracking-[0.5em] uppercase mb-4"
+          className="text-[#1ba3b8] text-xs tracking-[0.5em] uppercase mb-4"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           Notable Projects
@@ -101,10 +101,10 @@ export default function Skills() {
           animate={isBuildsInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-6xl font-black mb-12"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-inter)' }}
         >
           Things I&apos;ve<br />
-          <span className="text-[#c9a96e]">Shipped</span>
+          <span className="text-[#1ba3b8]">Shipped</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-px bg-white/5">
@@ -114,18 +114,18 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               animate={isBuildsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.15 * i }}
-              className="bg-[#0a0a0a] p-8 hover:bg-[#111] transition-colors duration-300 group"
+              className="bg-[#0a0e14] p-8 hover:bg-[#101820] transition-colors duration-300 group"
               data-hover="true"
             >
               <p
-                className="text-[#c9a96e]/60 text-[10px] tracking-[0.4em] uppercase mb-4"
+                className="text-[#1ba3b8]/60 text-[10px] tracking-[0.4em] uppercase mb-4"
                 style={{ fontFamily: 'var(--font-inter)' }}
               >
                 {item.tag}
               </p>
               <h3
-                className="text-white text-2xl font-black mb-3 group-hover:text-[#c9a96e] transition-colors duration-300"
-                style={{ fontFamily: 'var(--font-playfair)' }}
+                className="text-white text-2xl font-black mb-3 group-hover:text-[#1ba3b8] transition-colors duration-300"
+                style={{ fontFamily: 'var(--font-inter)' }}
               >
                 {item.title}
               </h3>
@@ -135,7 +135,7 @@ export default function Skills() {
               >
                 {item.desc}
               </p>
-              <div className="mt-6 w-8 h-[1px] bg-[#c9a96e]/30 group-hover:w-16 transition-all duration-500" />
+              <div className="mt-6 w-8 h-[1px] bg-[#1ba3b8]/30 group-hover:w-16 transition-all duration-500" />
             </motion.div>
           ))}
         </div>
